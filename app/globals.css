@@ -3,3 +3,13 @@
 @tailwind utilities;
 
 
+body, html {
+    height: 100%;
+}
+
+.hero {
+    background-color: rgb(30, 30, 30);
+    color: #FFF;
+    height: 100%;
+}
+
