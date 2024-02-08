@@ -45,3 +45,55 @@ input {
     font-weight: 300;
 }
 
+.i-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.i-text.icon {
+    flex: none;
+}
+
+.profile-img {
+    display: block;
+    overflow: hidden;
+    border-radius: 1000px;
+}
+
+.i-expand-more {
+    transition: transform ease-in-out .3s;
+}
+.i-expand-more.expanded {
+    transform: rotate(180deg);
+}
+
+.skeleton-block {
+    animation: loadingBlock infinite 2s;
+    background-color: rgb(247, 247, 247);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.skeleton-line {
+    height: 5px;
+    background-color: rgb(230, 230, 230);
+}
+@keyframes loadingBlock {
+    0% {
+        opacity: 0;
+    } 50% {
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+    }
+}
+
+.chip {
+    background-color: var(--color-secondary);
+    color: var(--color-base);
+    border-radius: 1000px;
+    padding: 2px 10px;
+    font-size: .9em;
+    font-weight: 500;
+}

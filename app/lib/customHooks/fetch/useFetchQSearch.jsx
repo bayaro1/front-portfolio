@@ -10,7 +10,7 @@ import { apiFetch } from '@/app/lib/api';
  * @param {number} timeout
  * @returns {array}
  */
-export const useFetchQSearch = (entrypoint, field = 'q', q, timeout = 300) => {
+export const useFetchQSearch = (entrypoint, field = 'q', q, limit = 5, timeout = 300) => {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ export const useFetchQSearch = (entrypoint, field = 'q', q, timeout = 300) => {
         setLoading(true);
         const newTimer = setTimeout(async () => {
             try {
-                const result = await apiFetch(entrypoint+'?'+field+'='+q);
+                const result = await apiFetch(entrypoint+'?limit='+limit+'&'+field+'='+q); // remettre la limite
                 const data = result['hydra:member'];
                 if(data.length === 0) {
                     setData(null);

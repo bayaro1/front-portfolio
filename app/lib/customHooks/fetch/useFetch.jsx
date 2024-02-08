@@ -18,7 +18,8 @@ export const useFetch = (entrypoint, options = {}) => {
             setErrors(null);
             try {
                 const result = await apiFetch(entrypoint, options);
-                setData(result);
+                const list = result['hydra:member'];
+                setData(list);
             } catch(e) {
                 if(e instanceof ApiError) {
                     setErrors(e.errors);

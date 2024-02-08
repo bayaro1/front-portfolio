@@ -5,7 +5,7 @@ import { CloseButton } from "@/app/ui/buttons/CloseButton";
 import { SiteConfig } from "@/app/lib/SiteConfig";
 import '@/app/ui/form/search/skillSearch.css';
 import { Loader } from "@/app/ui/icons/Loader";
-import Image from "next/image";
+import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
 
 export const SkillSearch = () => {
 
@@ -52,9 +52,6 @@ export const SkillSearch = () => {
 
 const SkillItem = ({skill}) => {
 
-    const parts = skill.learnedAt.split('-');
-    const learnedAt = parts[1] + '/' + parts[0];
-
     return (
         <div className="skill-list-item">
             <img 
@@ -68,8 +65,8 @@ const SkillItem = ({skill}) => {
                 <div className="skill-list-item-title">
                     {skill.name}
                 </div>
-                <div className="skill-list-item-text text-muted">
-                    Depuis {learnedAt}
+                <div className="chip">
+                    Depuis {getMonthAndYear(skill.learnedAt)}
                 </div>
             </div>
         </div>
