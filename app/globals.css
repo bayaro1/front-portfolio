@@ -10,6 +10,9 @@
 
     --color-secondary: #eae0fa;
     --color-secondary-dark: #e4d4fc;
+
+    --outline-input: solid 3px rgb(108 179 207);
+    --border-input: solid 1px rgb(220, 220, 220);
 }
 
 
@@ -27,6 +30,18 @@ body {
     height: 1em;
 }
 
+.no-overflow {
+    overflow: hidden;
+}
 
+input {
+    appearance: none;
+    outline: none;
+}
 
+.text-muted {
+    font-size: .85em;
+    font-style: italic;
+    font-weight: 300;
+}
 

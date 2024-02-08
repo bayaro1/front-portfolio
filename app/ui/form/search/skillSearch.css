@@ -1,0 +1,54 @@
+.search-wrapper {
+    position: relative;
+}
+.search-input {
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 35px;
+    border: var(--border-input);
+    border-radius: 6px;
+}
+.search-input::placeholder {
+    font-size: .9em;
+    font-weight: 200;
+}
+.search-input:focus {
+    outline: var(--outline-input);
+}
+.search-wrapper .i-close, .search-wrapper .loader {
+    width: 1em;
+    height: 1em;
+}
+.search-wrapper .close-button, .search-wrapper .loader {
+    position: absolute;
+    top: calc(50% - .5em);
+    right: 10px;
+    left: auto;
+}
+
+.skill-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background-color: #FFF;
+    z-index: 1;
+    box-shadow: 0 0 2px rgb(100, 100, 100);
+    border-radius: 6px;
+    padding: 7px 15px;
+}
+.skill-list-item {
+    padding: 6px 0;
+    font-size: .8em;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.skill-list-item-img {
+    width: 35px;
+    height: 35px;
+    flex: none;
+    display: block;
+}
