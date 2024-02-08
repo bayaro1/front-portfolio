@@ -1,3 +1,5 @@
+import '@/app/ui/buttons/index.css';
+
 export const Button = ({additionalClass, children, isLoading, onClick, ...props}) => {
 
     return (

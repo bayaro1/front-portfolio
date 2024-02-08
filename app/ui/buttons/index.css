@@ -1,0 +1,22 @@
+.button {
+    min-width: 200px;
+    height: 55px;
+    padding: 0 15px;
+    background-color: var(--color-base);
+    color: #FFF;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all .3s;
+}
+
+.button.secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+}
+
+.button:hover {
+    background-color: var(--color-base-flash);
+}
+.button.secondary:hover {
+    background-color: var(--color-secondary-dark);
+}

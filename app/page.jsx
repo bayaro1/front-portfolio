@@ -1,6 +1,4 @@
-import Image from "next/image";
-import { Button } from "./ui/buttons/Button";
-import { Hero } from "./components/Hero";
+import { Hero } from "@/app/components/Hero";
 
 export default function Page() {
   return (
@@ -9,5 +7,5 @@ export default function Page() {
       <section style={{height: '500px', backgroundColor: "green"}}>
       </section>
     </>
-  );
+  )
 }

@@ -3,13 +3,30 @@
 @tailwind utilities;
 
 
-body, html {
-    height: 100%;
+:root {
+    --color-black: #1e1e1e;
+    --color-base: #361964;
+    --color-base-flash: #4e268f;
+
+    --color-secondary: #eae0fa;
+    --color-secondary-dark: #e4d4fc;
 }
 
-.hero {
-    background-color: rgb(30, 30, 30);
-    color: #FFF;
+
+body, html {
     height: 100%;
+    color: var(--color-black);
 }
+body {
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+}
+
+
+
 
