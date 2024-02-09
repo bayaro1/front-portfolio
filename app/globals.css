@@ -78,6 +78,7 @@ input {
 .skeleton-line {
     height: 5px;
     background-color: rgb(230, 230, 230);
+    animation: loadingBlock infinite 2s;
 }
 @keyframes loadingBlock {
     0% {
@@ -96,4 +97,37 @@ input {
     padding: 2px 10px;
     font-size: .9em;
     font-weight: 500;
+}
+
+.hero-title {
+    font-size: 2.7em;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.main-subtitle {
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.base-link {
+    color: var(--color-base);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.border-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.border-title span {
+    flex: none;
+}
+.border-title::after {
+    flex: 1 0;
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: rgb(100, 100, 100);
 }

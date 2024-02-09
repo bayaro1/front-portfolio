@@ -1,12 +1,15 @@
 import '@/app/ui/buttons/index.css';
+import { Loader } from '@/app/ui/icons/Loader';
 
-export const Button = ({additionalClass, children, isLoading, onClick, preventDefault = true, ...props}) => {
+export const Button = ({additionalClass, children, isLoading, onClick, type = 'button', ...props}) => {
 
     const handleClick = e => {
-        if(preventDefault) {
+        if(type !== 'submit') {
             e.preventDefault();
         }
-        onClick();
+        if(onClick) {
+            onClick();
+        }
     }
 
     return (
@@ -14,10 +17,11 @@ export const Button = ({additionalClass, children, isLoading, onClick, preventDe
             className={'button' + (additionalClass ? ' '+additionalClass: '') + (isLoading ? ' disabled': '')} 
             disabled={isLoading}
             onClick={handleClick} 
+            type={type}
             {...props}
         >
             {
-                isLoading ? 'chargement...': children
+                isLoading ? <Loader />: children
             }
         </button>
     )

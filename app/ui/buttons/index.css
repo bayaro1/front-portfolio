@@ -12,6 +12,7 @@
     justify-content: center;
 }
 
+
 .button.secondary {
     background-color: var(--color-secondary);
     color: var(--color-black);
@@ -22,4 +23,9 @@
 }
 .button.secondary:hover {
     background-color: var(--color-secondary-dark);
+}
+
+.button.disabled {
+    opacity: .2;
+    pointer-events: none;
 }

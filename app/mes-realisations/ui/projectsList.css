@@ -1,0 +1,31 @@
+.projects-list {
+    margin: 20px 15px;
+}
+.project-item {
+    padding: 30px 0;
+}
+.project-item:first-child {
+    padding-top: 0;
+}
+.project-item-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.project-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.project-item-text {
+    margin: 10px 0;
+}
+.project-item-title {
+    font-size: 1.7em;
+}
+.chip.project-item-date-chip {
+    font-size: .75em;
+}

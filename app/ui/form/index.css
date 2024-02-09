@@ -1,0 +1,26 @@
+.form-control {
+    height: 40px;
+    border: var(--border-input);
+    border-radius: 6px;
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    padding-left: 10px;
+    margin: 3px 0;
+}
+.form-control.textarea {
+    height: 80px;
+}
+.form-control:focus {
+    outline: var(--outline-input);
+}
+.form-error {
+    color: red;
+    font-size: .8em;
+}
+.form-group {
+    margin: 10px 0;
+}
+.form-group.submit-group {
+    margin-top: 20px;
+}

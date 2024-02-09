@@ -49,8 +49,8 @@ export const prepareFetch = (entrypoint, data, method) => {
         options = {
             method: 'POST',
             headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
+                "Accept": "application/ld+json",
+                "Content-Type": "application/ld+json"
             },
             body: JSON.stringify(data)
         };

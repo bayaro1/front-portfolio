@@ -9,6 +9,7 @@ import { apiFetch } from '@/app/lib/api';
  */
 export const useFetch = (entrypoint, options = {}) => {
     const [data, setData] = useState(null);
+    const [count, setCount] = useState(null);
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState(null);
 
@@ -18,8 +19,8 @@ export const useFetch = (entrypoint, options = {}) => {
             setErrors(null);
             try {
                 const result = await apiFetch(entrypoint, options);
-                const list = result['hydra:member'];
-                setData(list);
+                setCount(result['hydra:totalItems']);
+                setData(result['hydra:member']);
             } catch(e) {
                 if(e instanceof ApiError) {
                     setErrors(e.errors);
@@ -35,5 +36,5 @@ export const useFetch = (entrypoint, options = {}) => {
         setData(null);
     }
 
-    return [data, loading, errors, reset];
+    return [data, count, loading, errors, reset];
 }

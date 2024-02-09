@@ -24,7 +24,7 @@
 }
 .hero-bg.b {
     background: linear-gradient(to top, rgb(159, 255, 242) 0%, rgb(255, 218, 116) 10%, rgb(255, 37, 37) 25%,  rgb(158, 39, 255) 100%);
-    transition: opacity 5s;
+    transition: opacity ease-in-out 5s;
 }
 
 .hero-text {
@@ -34,11 +34,6 @@
     flex-direction: column;
     gap: 50px;
     padding: 0 15px;
-}
-.hero-title {
-    font-size: 2.7em;
-    font-weight: 900;
-    line-height: 1.2;
 }
 .hero-subtitle {
     line-height: 1.7;
@@ -52,4 +47,27 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+}
+
+.contact-button-open {
+    border: solid 2px var(--color-base);
+    padding: 0 15px;
+    border-radius: 6px;
+    color: var(--color-base);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90px;
+    animation: contactOpening forwards ease-in-out .3s;
+}
+.contact-button-open-line {
+    font-weight: 600;
+}
+
+@keyframes contactOpening {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
 }

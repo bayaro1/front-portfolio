@@ -11,7 +11,7 @@ export const CvMenu = () => {
                     width={100}
                     height={150}
                 />
-                <a target="_blank" href="/profile/cv.pdf">Voir le CV</a>
+                <a className="base-link" target="_blank" href="/profile/cv.pdf">Voir le CV</a>
             </div>
         </div>
     )

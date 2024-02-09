@@ -54,7 +54,7 @@ export const ProjectsMenu = ({projects, fetchProjects}) => {
                             </div>
                             <div>{project.shortDescription}</div>
                             <div className="mobile-menu-project-url">
-                                <a target="_blank" href={project.url}>{project.url}</a>
+                                <a className="base-link" target="_blank" href={project.url}>{project.url}</a>
                             </div>
                         </div>
                     </div>

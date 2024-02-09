@@ -127,11 +127,6 @@
     align-items: center;
     justify-content: center;
 }
-.expandable-menu-item.cv-menu-item a {
-    text-decoration: underline;
-    color: var(--color-base);
-    font-weight: 600;
-}
 
 .mobile-menu-project-img {
     width: 80px;
@@ -143,11 +138,6 @@
 }
 .mobile-menu-project-item {
     font-size: .85em;
-}
-.mobile-menu-project-item a {
-    text-decoration: underline;
-    font-weight: 600;
-    color: var(--color-base);
 }
 .mobile-menu-project-title {
     text-transform: uppercase;
