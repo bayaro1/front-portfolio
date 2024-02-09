@@ -5,6 +5,7 @@ export const Logo = ({additionalClass, ...props}) => {
     return (
         <Link
             href="/"
+            {...props}
         >
             <Image
                 width={35}
@@ -12,7 +13,6 @@ export const Logo = ({additionalClass, ...props}) => {
                 src="/logo.png"
                 alt="Logo IA"
                 className={'logo' + (additionalClass ? ' '+additionalClass: '')}
-                {...props}
             />
         </Link>
     )

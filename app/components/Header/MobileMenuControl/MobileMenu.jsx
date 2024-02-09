@@ -9,14 +9,14 @@ import { useControlledFetch } from "@/app/lib/customHooks/fetch/useControlledFet
 import { SiteConfig } from "@/app/lib/SiteConfig";
 import { Footer } from "@/app/components/Footer";
 
-export const MobileMenu = () => {
+export const MobileMenu = ({close}) => {
     
     const [fetchProjects, projects, isLoading, error] = useControlledFetch(SiteConfig.API_URL + '/api/projects');
 
     return (
         <>
             <header className="mobile-menu-header">
-                <Logo />
+                <Logo onClick={close} />
             </header>
             <nav className="mobile-menu-nav">
                 <div className="mobile-menu-nav-item">
@@ -25,7 +25,7 @@ export const MobileMenu = () => {
                 </div>
                 <NavitemExpandable
                     className="mobile-menu-nav-item expandable"
-                    expandMenu={<ProjectsMenu projects={projects} fetchProjects={fetchProjects} />}
+                    expandMenu={<ProjectsMenu closeMobileMenu={close} projects={projects} fetchProjects={fetchProjects} />}
                 >
                     Mes réalisations
                 </NavitemExpandable>

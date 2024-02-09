@@ -10,7 +10,7 @@ import './index.css';
 export const Comments = ({projectIri}) => {
 
     //comment list
-    const [doFetch, commentsHydra, isLoading, error] = useControlledHydraFetch(SiteConfig.API_URL + '/api/comments?project='+projectIri + '&page=1&itemsPerPage=5');
+    const [doFetch, commentsHydra, isLoading, error] = useControlledHydraFetch(SiteConfig.API_URL + '/api/comments?project='+projectIri + '&page=1&itemsPerPage=30');
     useEffect(() => {
         doFetch();
     }, []);
@@ -36,7 +36,7 @@ export const Comments = ({projectIri}) => {
     }
 
     return (
-        <div>
+        <div className="comments-block">
             <CommentForm create={handleCreate} isSubmitting={isSubmitting} />
             <CommentList commentsHydra={commentsHydra} />
         </div>

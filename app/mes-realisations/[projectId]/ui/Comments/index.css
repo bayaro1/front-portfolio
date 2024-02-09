@@ -1,3 +1,7 @@
+.comments-block {
+    margin-top: 30px;
+    font-size: .9em;
+}
 .comment-form {
     background-color: rgb(245, 245, 245);
     padding: 10px 15px;
@@ -12,12 +16,20 @@
     font-size: 1.5em;
     margin: 20px 0;
 }
+.answers-title {
+    font-weight: 600;
+    font-size: .9em;
+    margin-bottom: 7px;
+}
+.comment-item-answers-wrapper {
+    margin: 20px 10px;
+}
 .comments-title.big.border-title::after {
     position: relative;
     bottom: -4px;
 }
 .comment-item {
-    padding: 10px 0;
+    padding: 12px 0;
     border-bottom: solid 1px rgb(225, 225, 225);
 }
 .comment-item:last-child {
@@ -35,13 +47,13 @@
 .comment-item-header .chip {
     position: absolute;
     font-size: .7em;
-    top: 2px;
+    top: 0;
     right: 0;
 }
-.comment-item-header :first-child {
+.comment-item-title {
     color: var(--color-base);
     font-weight: 600;
 }
 .comment-item-body {
-    margin-top: 6px;
+    margin-top: 7px;
 }

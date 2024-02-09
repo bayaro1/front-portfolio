@@ -1,7 +1,15 @@
-import '@/app/mes-realisations/page.css';
-import { ProjectsList } from '@/app/mes-realisations/ui/ProjectsList';
+'use client';
+
+import { SiteConfig } from "@/app/lib/SiteConfig";
+import { useFetch } from "@/app/lib/customHooks/fetch/useFetch";
+import { ProjectsListSkeleton } from "./ui/skeletons/ProjectsListSkeleton";
+import { ProjectsList } from "./ui/ProjectsList";
+
 
 export default function Page() {
+
+    const [projects, count, isLoading, errors, reset] = useFetch(SiteConfig.API_URL + '/api/projects');
+
     return (
         <>
             <main className="hero-bis">
@@ -11,7 +19,15 @@ export default function Page() {
                     </div>
                 </div>
             </main>
-            <ProjectsList />
+            <div className="page">
+                {
+                    projects ? (
+                        <ProjectsList projects={projects} count={count} />
+                    ): (
+                        <ProjectsListSkeleton />
+                    )
+                }
+            </div>
         </>
-    )
+    );
 }

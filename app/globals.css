@@ -15,6 +15,9 @@
     --border-input: solid 1px rgb(220, 220, 220);
 }
 
+*, *::after, *::before {
+    box-sizing: border-box;
+}
 
 body, html {
     height: 100%;
@@ -123,11 +126,32 @@ input {
 }
 .border-title span {
     flex: none;
+    white-space: nowrap;
 }
-.border-title::after {
+.border-title::after, .border-title-double::before {
     flex: 1 0;
     content: '';
     display: block;
     height: 1px;
     background-color: rgb(100, 100, 100);
 }
+
+.page {
+    margin: 20px 15px;
+}
+
+.hero-text {
+    padding: 0 15px;
+}
+
+
+
+.homepage-highlight {
+    margin: 35px 15px 80px;
+}
+.homepage-highlight-title {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin-bottom: -15px;
+}
+

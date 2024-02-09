@@ -7,9 +7,8 @@ import { ApiError, apiFetch } from '@/app/lib/api';
  * @param {Object} options 
  * @returns 
  */
-export const useFetch = (entrypoint, options = {}) => {
+export const useFetchHydra = (entrypoint, options = {}) => {
     const [data, setData] = useState(null);
-    const [count, setCount] = useState(null);
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState(null);
 
@@ -19,8 +18,7 @@ export const useFetch = (entrypoint, options = {}) => {
             setErrors(null);
             try {
                 const result = await apiFetch(entrypoint, options);
-                setCount(result['hydra:totalItems']);
-                setData(result['hydra:member']);
+                setData(result);
             } catch(e) {
                 if(e instanceof ApiError) {
                     setErrors(e.errors);
@@ -36,5 +34,5 @@ export const useFetch = (entrypoint, options = {}) => {
         setData(null);
     }
 
-    return [data, count, loading, errors, reset];
+    return [data, loading, errors, reset];
 }

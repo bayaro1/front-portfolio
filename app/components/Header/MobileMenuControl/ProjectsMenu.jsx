@@ -3,9 +3,10 @@
 import { SiteConfig } from "@/app/lib/SiteConfig";
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
 import { Loader } from "@/app/ui/icons/Loader";
+import Link from "next/link";
 import { useEffect } from "react";
 
-export const ProjectsMenu = ({projects, fetchProjects}) => {
+export const ProjectsMenu = ({projects, fetchProjects, closeMobileMenu}) => {
 
     useEffect(() => {
         if(!projects) {
@@ -42,19 +43,27 @@ export const ProjectsMenu = ({projects, fetchProjects}) => {
             {
                 projects.map(project => (
                     <div key={project.id} className="expandable-menu-item mobile-menu-project-item">
-                        <img 
-                            className="mobile-menu-project-img"
-                            src={SiteConfig.API_URL + project.screenMobilePath}
-                            alt={'Capture d\'écran du site ' + project.title}
-                        />
+                        <Link onClick={closeMobileMenu} href={'/mes-realisations/'+project.id}>
+                            <img 
+                                className="mobile-menu-project-img"
+                                src={SiteConfig.API_URL + project.screenMobilePath}
+                                alt={'Capture d\'écran du site ' + project.title}
+                            />
+                        </Link>
                         <div className="mobile-menu-project-item-body">
-                            <div className="mobile-menu-project-title">{project.title}</div>
+                            <div className="mobile-menu-project-title">
+                                <Link onClick={closeMobileMenu} href={'/mes-realisations/'+project.id}>
+                                    {project.title}
+                                </Link>
+                            </div>
                             <div className="chip">
                                 {getMonthAndYear(project.startedAt)} - {getMonthAndYear(project.endAt)}
                             </div>
                             <div>{project.shortDescription}</div>
                             <div className="mobile-menu-project-url">
-                                <a className="base-link" target="_blank" href={project.url}>{project.url}</a>
+                                <Link onClick={closeMobileMenu} className="base-link" href={'/mes-realisations/'+project.id}>
+                                    Voir plus
+                                </Link>
                             </div>
                         </div>
                     </div>
