@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/app/ui/buttons/Button"
 import { reverseAnimation } from "@/app/lib/animations/heroAnimation";
 import '@/app/components/Hero/index.css';
+import { Contact } from "@/app/components/Hero/Contact";
+import Link from "next/link";
 
 export const Hero = () => {
 
@@ -28,8 +30,10 @@ export const Hero = () => {
                 <h1 className="hero-title">Besoin d'un développeur web ?</h1>
                 <p className="hero-subtitle">Je suis Ibai Arotçarena, développeur Symfony / React. Je me suis formé en autodidacte depuis 2021.</p>
                 <div className="hero-cta-wrapper">
-                    <Button>Mes réalisations</Button>
-                    <Button additionalClass="secondary">Me contacter</Button>
+                    <Link className="button" href="/mes-realisations">
+                        Mes réalisations
+                    </Link>
+                    <Contact />
                 </div>
             </div>
         </main>

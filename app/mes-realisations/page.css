@@ -1,0 +1,14 @@
+.hero-bis-img {
+    height: 500px;
+    max-height: 30vh;
+    background: url("/img/banner.jpg") center center / cover no-repeat;
+    margin-top: -70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-bis-img .hero-text {
+    margin-top: auto;
+    margin-bottom: 10px;
+    color: #FFF;
+}
