@@ -80,8 +80,8 @@ const AnswerItem = ({answer}) => {
                     answer.company && <div className="text-muted">{answer.company}</div>
                 }
                 <div className="chip">{getDateTimeString(answer.createdAt)}</div>
-                <div className="comment-item-body">{answer.content}</div>
             </div>
+            <div className="comment-item-body">{answer.content}</div>
         </div>
     )
 }

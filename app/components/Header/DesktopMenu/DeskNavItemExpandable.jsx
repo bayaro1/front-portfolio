@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 export const DeskNavItemExpandable = forwardRef(({children, renderExpandMenu}, headerRef) => {
 
     const [isOpen, open, close] = useOpenState(false);
-    const delayAction = useDelayAction(500);    
+    const [delayAction, clearTimer] = useDelayAction(500);    
 
 
     const handleMouseOver = () => {
@@ -27,8 +27,24 @@ export const DeskNavItemExpandable = forwardRef(({children, renderExpandMenu}, h
         }
     }, [isOpen]);
 
+    const handleToggle = () => {
+        clearTimer();
+        if(isOpen) {
+            close();
+        } else {
+            open();
+        }
+    }
+
+
     return (
-        <button className={'desktop-menu-nav-item expandable' + (isOpen ? ' active': '')} type="button" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+        <button 
+            className={'desktop-menu-nav-item expandable' + (isOpen ? ' active': '')} 
+            type="button" 
+            onMouseOver={handleMouseOver} 
+            onMouseLeave={handleMouseLeave}
+            onClick={handleToggle}
+            >
             <span>{children}</span>
             <ExpandMoreIcon additionalClass={isOpen ? ' expanded': ''} />
             {

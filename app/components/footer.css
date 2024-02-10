@@ -3,6 +3,27 @@
     padding: 20px;
     background-color: rgb(247, 247, 247);
 }
+.footer-block {
+    max-width: 500px;
+    margin: 0 auto;
+}
 .footer-item {
     margin: 15px 0;
+}
+
+@media only screen and (min-width: 1050px) {
+    .footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .footer-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 1250px;
+        max-width: none;
+    }
 }

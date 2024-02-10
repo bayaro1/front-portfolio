@@ -1,7 +1,15 @@
 
 - responsive
+    - gérer skeletons desktop
 
-- expand menu : gérer ouverture/fermeture au click sur nav-item
+bugs à corriger :
+    - au début du scroll avec expand menu ouvert y a une petite faille
+    - pb du searchSkills list ouvert en même temps que expand menu 
+
+    - arranger la banner avec gimp pour que les textes apparaissent bien : en haut à gauche plus blanc et en haut à droite plus sombre
+    - passer les liens du header en violet au hover
+    - gérer sticky de project_show plus préciséement en ajoutant un body scroll-up et body scroll-down
+    - mettre screenshots de différentes pages de cocktailissimo sur la homepage à droite de "besoin d'un dév web ?" sur desktop
 
 - une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec bonne picture du logo 
 

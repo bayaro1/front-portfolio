@@ -27,8 +27,10 @@ export const Hero = () => {
             <div ref={refBgB} className="hero-bg b">
             </div>
             <div className="hero-text">
-                <h1 className="hero-title">Besoin d'un développeur web ?</h1>
-                <p className="hero-subtitle">Je suis Ibai Arotçarena, développeur Symfony / React. Je me suis formé en autodidacte depuis 2021.</p>
+                <div className="hero-title-wrapper">
+                    <h1 className="hero-title">Besoin d'un développeur web ?</h1>
+                    <p className="hero-subtitle">Je suis Ibai Arotçarena, développeur Symfony / React. Je me suis formé en autodidacte depuis 2021.</p>
+                </div>
                 <div className="hero-cta-wrapper">
                     <Link className="button" href="/mes-realisations">
                         Mes réalisations

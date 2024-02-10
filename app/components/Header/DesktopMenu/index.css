@@ -35,12 +35,18 @@
     }
 }
 
-.desk-expand-menu-project-list {
+.desk-expand-menu-project-list-wrapper {
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.desk-expand-menu-project-list {
+    display: flex;
+    align-items: flex-start;
     justify-content: space-evenly;
     gap: 30px;
-    height: 100%;
+    width: 100%;
 }
 
 .desk-expand-menu-project-list .mobile-menu-project-item {

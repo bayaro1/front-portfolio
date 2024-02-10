@@ -9,8 +9,19 @@
 
 .hero-bis-img .hero-text {
     margin-top: auto;
-    margin-bottom: 10px;
     color: #FFF;
+}
+.hero-text-bis {
+    margin-top: auto;
+}
+.hero-title-bis {
+    font-size: 2.7em;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #FFF;
+    padding: 15px;
+    max-width: var(--page-container-width);
+    margin: 0 auto;
 }
 
 .project-item {
@@ -40,4 +51,48 @@
 }
 .chip.project-item-date-chip {
     font-size: .75em;
+}
+
+.project-index, .project-index-main-subtitle  {
+    max-width: var(--page-container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+
+
+@media only screen and (min-width: 460px) {
+    .project-index {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .project-index .project-item {
+        margin: 0;
+    }
+    .project-index .project-item {
+        width: calc(50% - 8px);
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .project-index .project-item {
+        width: calc(33% - 15px);
+        max-width: 300px;
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    .hero-bis-img {
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, .2), rgba(0, 0, 0, .3)),
+                    url("/img/banner.jpg") center center / cover no-repeat;
+    }
+    .project-index {
+        gap: 30px;
+    }
+    .project-index .project-item {
+        width: calc(33% - 20px);
+        max-width: 300px;
+    }
 }

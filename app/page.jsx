@@ -5,6 +5,7 @@ import { ProjectShow } from "./mes-realisations/[projectId]/ui/ProjectShow";
 import { useFetchHydra } from "./lib/customHooks/fetch/useFetchHydra";
 import { ProjectShowSkeleton } from "./mes-realisations/[projectId]/ui/skeletons/ProjectShowSkeleton";
 import '@/app/mes-realisations/ui/index.css';
+import '@/app/mes-realisations/[projectId]/ui/index.css';
 
 export default function Page() {
 

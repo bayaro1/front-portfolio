@@ -41,12 +41,14 @@ export const SkillSearch = forwardRef((props, headerRef) => {
 
     //pour éviter que le header se ferme au scroll si on est en train de faire une recherche
     useEffect(() => {
-        if(q.length > 0) {
-            headerRef.current.classList.add('force-open');
-        } else {
-            headerRef.current.classList.remove('force-open');
+        if(headerRef.current) {
+            if(q.length > 0 || isOpen) {
+                headerRef.current.classList.add('force-open');
+            } else {
+                headerRef.current.classList.remove('force-open');
+            }
         }
-    }, [q]);
+    }, [q, isOpen]);
 
     return (
         <div className="search-wrapper">

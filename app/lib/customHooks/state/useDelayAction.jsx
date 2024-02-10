@@ -3,11 +3,15 @@ import { useState } from "react";
 export const useDelayAction = (timeToWait = 300) => {
     const [timer, setTimer] = useState(null);
 
-    const delayAction = (action, overTimeToWait = null) => {
+    const clearTimer = () => {
         if(timer) {
             clearTimeout(timer);
             setTimer(null);
         }
+    };
+
+    const delayAction = (action, overTimeToWait = null) => {
+        clearTimer();
         setTimer(
             setTimeout(() => {
                 action();
@@ -16,5 +20,5 @@ export const useDelayAction = (timeToWait = 300) => {
         );
     }
 
-    return delayAction;
+    return [delayAction, clearTimer];
 }

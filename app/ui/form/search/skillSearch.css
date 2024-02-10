@@ -10,6 +10,9 @@
     border-radius: 6px;
     font-weight: 400;
 }
+.mobile-menu-nav .search-input {
+    font-size: .9em;
+}
 .search-input::placeholder {
     font-size: .9em;
     font-weight: 200;
@@ -41,7 +44,7 @@
     left: 0;
     right: 0;
     background-color: #FFF;
-    z-index: 1;
+    z-index: 3;
     border: var(--border-input);
     border-top: none;
     border-radius: 0 0 6px 6px;
