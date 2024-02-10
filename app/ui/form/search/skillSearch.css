@@ -4,7 +4,7 @@
 .search-input {
     height: 40px;
     width: 100%;
-    padding-left: 10px;
+    padding-left: 35px;
     padding-right: 35px;
     border: var(--border-input);
     border-radius: 6px;
@@ -17,15 +17,21 @@
 .search-input:focus {
     outline: var(--outline-input);
 }
-.search-wrapper .i-close, .search-wrapper .loader {
+.search-wrapper .i-close, .search-wrapper .loader, .search-wrapper .i-search {
     width: 1em;
     height: 1em;
 }
-.search-wrapper .close-button, .search-wrapper .loader {
+.search-wrapper .close-button, .search-wrapper .loader, .search-wrapper .i-search {
     position: absolute;
     top: calc(50% - .5em);
+}
+.search-wrapper .close-button, .search-wrapper .loader {
     right: 10px;
     left: auto;
+}
+.search-wrapper .i-search {
+    left: 10px;
+    right: auto;
 }
 
 .skill-list {

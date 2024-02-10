@@ -1,0 +1,10 @@
+.desktop-expand-menu-wrapper {
+    height: 400px;
+    max-height: calc(100vh - 100px);
+    background-color: #FFF;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}

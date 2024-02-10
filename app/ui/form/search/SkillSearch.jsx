@@ -6,6 +6,7 @@ import { SiteConfig } from "@/app/lib/SiteConfig";
 import '@/app/ui/form/search/skillSearch.css';
 import { Loader } from "@/app/ui/icons/Loader";
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
+import { SearchIcon } from "../../icons/SearchIcon";
 
 export const SkillSearch = () => {
 
@@ -29,6 +30,7 @@ export const SkillSearch = () => {
                 className="search-input"
                 placeholder="Rechercher une compétence" 
             />
+            <SearchIcon />
             {
                 (!isLoading && q.length > 0) && (
                     <CloseButton aria-label="Vider le champ" title="Vider le champ" onClick={handleEmpty} />

@@ -11,6 +11,7 @@
 .comments-title {
     font-size: 1.2em;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 .comments-title.big {
     font-size: 1.5em;
@@ -23,6 +24,9 @@
 }
 .comment-item-answers-wrapper {
     margin: 20px 10px;
+}
+.comment-item-answers {
+    font-size: .9em;
 }
 .comments-title.big.border-title::after {
     position: relative;

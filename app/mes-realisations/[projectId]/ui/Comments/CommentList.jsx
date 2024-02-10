@@ -43,7 +43,7 @@ const CommentItem = ({comment}) => {
                 comment.answers.length > 0 && (
                     <div className="comment-item-answers-wrapper">
                         <h4 className="answers-title border-title">
-                            <span>Réponses ({answers.length})</span>
+                            <span>Réponses ({comment.answers.length})</span>
                         </h4>
                         <div className="comment-item-answers">
                             {
@@ -66,9 +66,9 @@ const AnswerItem = ({answer}) => {
                         <>
                             <Image
                                 className="profile-img"
-                                src="/profile/me/jpg"
-                                width={40}
-                                height={40}
+                                src="/profile/me.jpg"
+                                width={30}
+                                height={30}
                             />
                             <div className="comment-item-title">Ibai</div>
                         </>

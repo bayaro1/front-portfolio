@@ -137,7 +137,13 @@ input {
 }
 
 .page {
-    margin: 20px 15px;
+    margin: 20px 15px 80px;
+}
+.header-fixed + .hero-bis {
+    margin-top: 70px;
+}
+.header-fixed + .hero {
+    margin-top: 0;
 }
 
 .hero-text {

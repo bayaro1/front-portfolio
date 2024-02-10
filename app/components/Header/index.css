@@ -1,23 +1,41 @@
 .header {
     position: relative;
     z-index: 1;
-}
-
-.header-static {
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+    transition: all ease-in-out .4s;
+}
+.header.force-open, .header.header-fixed.force-open {
+    background: none;
+    background-color: #FFF;
+    color: var(--color-black);
+}
+.header.header-fixed.force-open {
+    top: 0;
 }
 
-.header-static .i-menu {
+.header.header-fixed {
+    position: fixed;
+    z-index: 3;
+    top: -70px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, rgb(17, 255, 164), rgb(198, 11, 255));
+}
+.header.header-fixed.scroll-up {
+    top: 0;
+}
+
+.header .i-menu {
     flex: none;
     width: 35px;
     height: 35px;
     color: #FFF;
 }
-.header-static .menu-button {
+.header .menu-button {
     padding: 3px 12px;
     background-color: rgba(255, 255, 255, .2);
     border-radius: 1000px;
@@ -25,4 +43,62 @@
 
 .header .logo {
     margin-right: 15px;
+}
+
+.desktop-menu {
+    display: none;
+}
+
+
+@media only screen and (min-width: 1050px) {
+    .header .menu-button {
+        display: none;
+    }
+    .header {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+    .logo-button {
+        position: absolute;
+        left: 30px;
+        margin: 0;
+        top: calc(50% - 17px);
+    }
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+    }
+    .desktop-menu-nav-item {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        color: #FFF;
+    }
+    .desktop-menu-nav-item .search-wrapper {
+        color: var(--color-black);
+    }
+    .desktop-menu-nav-item .search-wrapper .icon.i-search {
+        top: calc(50% - .8em);
+        width: 1.6em;
+        height: 1.6em;
+    }
+    .desktop-menu-nav-item .search-wrapper .search-input {
+        width: 400px;
+        padding-left: 42px;
+    }
+    .desktop-menu-nav-item .search-wrapper .search-input::placeholder {
+        font-weight: 400;
+    }
+    .desktop-menu-nav-item .i-expand-more {
+        width: 1.7em;
+        height: 1.7em;
+    }
+    .desktop-menu-nav-item .search-wrapper .icon, .desktop-menu-nav-item .search-wrapper .loader {
+        color: var(--color-black);
+        width: 1.1em;
+        height: 1.1em;
+        top: calc(50% - .6em);
+    }
 }

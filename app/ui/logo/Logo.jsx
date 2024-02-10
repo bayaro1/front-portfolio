@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const Logo = ({additionalClass, ...props}) => {
     return (
         <Link
+            className="logo-button"
             href="/"
             {...props}
         >

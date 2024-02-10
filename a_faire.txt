@@ -1,11 +1,15 @@
 
-- hydrater comments avec answers et supprimer l'appel dans front
-- header fixed 
-- mettre toutes mes compétences dans le footer : organisées par frameworks & langages  -  Autres outils
 - responsive
+
+
+- mettre toutes mes compétences dans le footer : organisées par frameworks & langages  -  Autres outils
+
 
 - voir si en production je peux utiliser un server-component async avec suspense pour mes-realisation/ProjectsList.jsx
     pour éviter que la liste recharge à chaque fois qu'on revient sur la page
     problème initial : certificat self-signed : car le serveur de dev de next est en http
 - idem pour les pages project_show et project_list qui doivent recharger à chaque fois
 - ou voir s'il existe une autre solution que fetch pour faire appel à une api depuis un composant server de next 
+
+
+- sauvegarder tous les composants réutilisables dans un dossier

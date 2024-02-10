@@ -5,7 +5,7 @@ import '@/app/components/Header/MobileMenuControl/index.css';
 import { MobileMenu } from "@/app/components/Header/MobileMenuControl/MobileMenu";
 import { useOpenState } from "@/app/lib/customHooks/state/useOpenState";
 
-export const MobileMenuControl = () => {
+export const MobileMenuControl = ({fetchProjects, projects}) => {
 
     const [isOpen, open, close] = useOpenState(false);
 
@@ -17,7 +17,7 @@ export const MobileMenuControl = () => {
                 isOpen={isOpen}
                 close={close}
             >
-                <MobileMenu close={close} />
+                <MobileMenu fetchProjects={fetchProjects} projects={projects} close={close} />
             </Modal>
         </>
     )

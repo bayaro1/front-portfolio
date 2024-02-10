@@ -5,14 +5,10 @@ import { SkillSearch } from "@/app/ui/form/search/SkillSearch"
 import { NavitemExpandable } from "@/app/ui/nav/NavItemExpandable"
 import { ProjectsMenu } from "@/app/components/Header/MobileMenuControl/ProjectsMenu"
 import { CvMenu } from "@/app/components/Header/MobileMenuControl/CvMenu"
-import { useControlledFetch } from "@/app/lib/customHooks/fetch/useControlledFetch";
-import { SiteConfig } from "@/app/lib/SiteConfig";
 import { Footer } from "@/app/components/Footer";
 
-export const MobileMenu = ({close}) => {
+export const MobileMenu = ({fetchProjects, projects, close}) => {
     
-    const [fetchProjects, projects, isLoading, error] = useControlledFetch(SiteConfig.API_URL + '/api/projects');
-
     return (
         <>
             <header className="mobile-menu-header">
