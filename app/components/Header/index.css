@@ -8,10 +8,19 @@
     padding: 0 15px;
     transition: all ease-in-out .4s;
 }
-.header.force-open, .header.header-fixed.force-open {
+.header.force-light-bg, .header.header-fixed.force-light-bg {
     background: none;
     background-color: #FFF;
     color: var(--color-black);
+}
+.desktop-menu-nav-item {
+    transition: all .3s;
+}
+.header.force-light-bg .desktop-menu-nav-item, .header.header-fixed.force-light-bg .desktop-menu-nav-item {
+    color: rgb(130, 130, 130);
+}
+.header.force-light-bg .desktop-menu-nav-item.active, .header.header-fixed.force-light-bg .desktop-menu-nav-item.active {
+    color: var(--color-base);
 }
 .header.header-fixed.force-open {
     top: 0;

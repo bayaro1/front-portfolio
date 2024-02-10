@@ -1,6 +1,9 @@
 
 - responsive
 
+- expand menu : gérer ouverture/fermeture au click sur nav-item
+
+- une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec bonne picture du logo 
 
 - mettre toutes mes compétences dans le footer : organisées par frameworks & langages  -  Autres outils
 

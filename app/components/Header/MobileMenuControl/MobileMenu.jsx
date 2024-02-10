@@ -6,9 +6,13 @@ import { NavitemExpandable } from "@/app/ui/nav/NavItemExpandable"
 import { ProjectsMenu } from "@/app/components/Header/MobileMenuControl/ProjectsMenu"
 import { CvMenu } from "@/app/components/Header/MobileMenuControl/CvMenu"
 import { Footer } from "@/app/components/Footer";
+import { useRef } from "react";
 
 export const MobileMenu = ({fetchProjects, projects, close}) => {
     
+    //inutile : seulement pour passer une ref à skillSearch (skillSearch utilise la ref pour le desktop menu et pas pour le mobile menu) 
+    const ref = useRef(null);
+
     return (
         <>
             <header className="mobile-menu-header">
@@ -17,7 +21,7 @@ export const MobileMenu = ({fetchProjects, projects, close}) => {
             <nav className="mobile-menu-nav">
                 <div className="mobile-menu-nav-item">
                     <div style={{marginBottom: '5px'}}>Mes compétences</div>
-                    <SkillSearch />
+                    <SkillSearch ref={ref} />
                 </div>
                 <NavitemExpandable
                     className="mobile-menu-nav-item expandable"

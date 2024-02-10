@@ -1,33 +1,61 @@
 'use client';
 import { useFetchQSearch } from "@/app/lib/customHooks/fetch/useFetchQSearch"
-import { useState } from "react"
+import { forwardRef, useEffect, useState } from "react"
 import { CloseButton } from "@/app/ui/buttons/CloseButton";
 import { SiteConfig } from "@/app/lib/SiteConfig";
 import '@/app/ui/form/search/skillSearch.css';
 import { Loader } from "@/app/ui/icons/Loader";
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
 import { SearchIcon } from "../../icons/SearchIcon";
+import { useOpenState } from "@/app/lib/customHooks/state/useOpenState";
+import { defaultSkills } from "@/app/lib/defaultSkills";
 
-export const SkillSearch = () => {
 
+
+export const SkillSearch = forwardRef((props, headerRef) => {
+
+    const [isOpen, open, close] = useOpenState(false);
     const [q, setQ] = useState('');
     const [skills, resetSkills, isLoading, error] = useFetchQSearch(SiteConfig.API_URL + '/api/skills', 'name', q);
+
+    //si skills est un tableau vide on ferme
+    useEffect(() => {
+        if(skills) {
+            if(skills.length === 0) {
+                close();
+            } else {
+                open();
+            }
+        }
+    }, [skills]); 
 
     const handleEmpty = () => {
         setQ('');
         resetSkills();
+        close();
     }
 
     const handleChange = e => {
         setQ(e.target.value);
     }
 
+    //pour éviter que le header se ferme au scroll si on est en train de faire une recherche
+    useEffect(() => {
+        if(q.length > 0) {
+            headerRef.current.classList.add('force-open');
+        } else {
+            headerRef.current.classList.remove('force-open');
+        }
+    }, [q]);
+
     return (
         <div className="search-wrapper">
             <input 
                 onChange={handleChange}
+                onFocus={open}
+                onBlur={close}
                 value={q} 
-                className="search-input"
+                className={'search-input' + (isOpen ? ' open': '')}
                 placeholder="Rechercher une compétence" 
             />
             <SearchIcon />
@@ -40,17 +68,23 @@ export const SkillSearch = () => {
                 isLoading && <Loader />
             }
             {
-                skills && skills.length > 0 && (
+                isOpen && (
                     <div className="skill-list">
                         {
-                            skills.map(skill => <SkillItem key={skill.id} skill={skill} />)
+                            skills ? (
+                                skills.map(skill => <SkillItem key={skill.id} skill={skill} />)
+
+                            ): (
+                                defaultSkills.map(skill => <SkillItem key={skill.id} skill={skill} />)
+
+                            )
                         }
                     </div>
                 )
             }
         </div>
     )
-}
+});
 
 const SkillItem = ({skill}) => {
 
