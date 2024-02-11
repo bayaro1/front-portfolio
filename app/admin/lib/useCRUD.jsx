@@ -32,18 +32,18 @@ export const useCRUD = (baseEntrypoint, createEntrypoint = null, updateEntrypoin
         setError(null);
         setLoading(true);
         try {
-            const items = await apiPreparedFetch(baseEntrypoint, params, 'GET');
-            dispatch({type: 'FETCH_ALL', payload: items});
+            const hydraList = await apiPreparedFetch(baseEntrypoint, params, 'GET');
+            dispatch({type: 'FETCH_ALL', payload: hydraList['hydra:member']});
         } catch(e) {
             setError(e);
         }
         setLoading(false);
     };
 
-    const create = async () => {
+    const create = async (item) => {
         setError(null);
         try {
-            const createdItem = await apiPreparedFetch(createEntrypoint ?? baseEntrypoint, {}, 'POST');
+            const createdItem = await apiPreparedFetch(createEntrypoint ?? baseEntrypoint, item, 'POST');
             dispatch({type: 'CREATE', payload: createdItem});
         } catch(e) {
             setError(e);
@@ -72,7 +72,12 @@ export const useCRUD = (baseEntrypoint, createEntrypoint = null, updateEntrypoin
             await apiPreparedFetch((deleteEntrypoint ?? baseEntrypoint) + '/' + id, {}, 'DELETE');
             dispatch({type: 'DELETE', target: id});
         } catch(e) {
-            setError(e);
+            if(e instanceof SyntaxError) {
+                //c le cas d'une réponse vide (204)
+                dispatch({type: 'DELETE', target: id});
+            } else {
+                setError(e);
+            }
         }
     };
     

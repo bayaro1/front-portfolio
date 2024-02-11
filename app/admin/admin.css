@@ -58,6 +58,7 @@
     font-weight: 600;
     padding: 10px 16px;
     border-radius: 6px;
+    margin: 5px 0;
 }
 
 .form-group {
@@ -72,4 +73,45 @@
 }
 .form-control:focus {
     outline: var(--outline-input);
+}
+
+.admin-login-form, .admin-user-card {
+    padding: 15px 25px;
+    max-width: 450px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.admin-login-title {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.admin-form-modal-container {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admin-form-modal {
+    width: 450px;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.admin-form-modal .button {
+    margin: 4px auto;
+}
+.admin-submit-group {
+    margin-top: 20px;
 }

@@ -14,7 +14,7 @@ export const AdminProjectTable = ({projects, update, deleteProject}) => {
             </thead>
             <tbody>
                 {
-                    projects['hydra:member'].map(project => (
+                    projects.map(project => (
                         <AdminProjectItem 
                             key={project.id} 
                             project={project}

@@ -2,7 +2,7 @@ export const ProjectShowSkeleton = () => {
     return (
         <div className="skeleton-container">
             <div style={{margin: '40px 0'}}>
-                <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                <div style={{margin: '10px 0', width: '400px'}} className="skeleton-line"></div>
             </div>
             <div className="skeleton-project-show-row">
                 <div className="skeleton-project-show-left-col" style={{margin: '20px 0'}}>
@@ -38,6 +38,21 @@ export const ProjectShowSkeleton = () => {
                             <div style={{margin: '10px 0'}} className="skeleton-line"></div>
                             <div style={{margin: '10px 0'}} className="skeleton-line"></div>
                         </div>
+                    </div>
+                    <div style={{margin: '20px 10px'}}>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                    </div>
+                    <div style={{margin: '20px 10px'}}>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                    </div>
+                    <div style={{margin: '20px 10px'}}>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
+                        <div style={{margin: '10px 0'}} className="skeleton-line"></div>
                     </div>
                 </div>
             </div>

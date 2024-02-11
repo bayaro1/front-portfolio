@@ -5,6 +5,7 @@ export const apiFetch = async (entrypoint, options = {}) => {
             "Accept": "application/ld+json",
             "Content-Type": "application/ld+json"
         },
+        credentials: 'include',
         ...options
     });
     const data = await response.json();
@@ -12,15 +13,17 @@ export const apiFetch = async (entrypoint, options = {}) => {
         return data;
     }
     if(data.status && data.detail) {
-        throw new Error('Error ' + data.status + ' : ' + data.detail);
+        throw new Error('Error '+data.status+' : '+data.detail);
+    } else if(data.error) {
+        throw new Error(data.error);
     }
 }
 
 export class ApiError {
-    errors;
+    data;
 
-    constructor(errors) {
-        this.errors = errors;
+    constructor(data) {
+        this.data = data;
     }
 }
 
@@ -32,9 +35,8 @@ export class ApiError {
  * @param {string} method 
  * @returns 
  */
-export const prepareFetch = (entrypoint, data, method) => {
+export const prepareFetch = (entrypoint, data, method, options = {}) => {
     let url = entrypoint;
-    let options = {};
 
     if(method === 'GET') {
         let params = [];
@@ -44,15 +46,21 @@ export const prepareFetch = (entrypoint, data, method) => {
         if(params.length > 0) {
             url += '?' + params.join('&');
         }
-    } else if(method === 'POST') {
+    } else if(method === 'POST' || method === 'PUT' || method === 'PATCH') {
         options = {
-            method: 'POST',
+            ...options,
+            method: method,
             headers: {
                 "Accept": "application/ld+json",
-                "Content-Type": "application/ld+json"
+                "Content-Type": method === 'PATCH' ? "application/merge-patch+json": "application/ld+json"
             },
             body: JSON.stringify(data)
         };
+    } else if(method === 'DELETE') {
+        options = {
+            ...options,
+            method: method,
+        }
     }
 
     return [url, options];
@@ -67,9 +75,9 @@ export const prepareFetch = (entrypoint, data, method) => {
  * @param {string} method 
  * @returns {Promise}
  */
-export const apiPreparedFetch = (entrypoint, data = {}, method = 'GET') => {
-    const [url, options] = prepareFetch(entrypoint, data, method);
-    return apiFetch(url, options);
+export const apiPreparedFetch = (entrypoint, data = {}, method = 'GET', options = {}) => {
+    const [url, opts] = prepareFetch(entrypoint, data, method, options);
+    return apiFetch(url, opts);
 }
 
 

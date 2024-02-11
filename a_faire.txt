@@ -1,12 +1,15 @@
 - admin
-    - gérer la connexion : il faut envoyer les cookies avec samesite = lax
-    - voir pourquoi ça bug quand on entre d identifiants invalides
-    - mettre en place update et create
+    OK skill
+    - project
+    - ajouter les champs image
 
 - une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec bonne picture du logo 
 
 - mettre toutes mes compétences dans le footer : organisées par frameworks & langages  -  Autres outils
 
+
+- voir si on peut servir en https en local et voir si on peut utiliser les server-components async du coup
+- attention : est-ce que ça pose un problème pour les exports statiques ?
 
 - voir si en production je peux utiliser un server-component async avec suspense pour mes-realisation/ProjectsList.jsx
     pour éviter que la liste recharge à chaque fois qu'on revient sur la page

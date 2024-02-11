@@ -1,7 +1,7 @@
 import { useDelayAction } from "@/app/lib/customHooks/state/useDelayAction";
 import { useOpenState } from "@/app/lib/customHooks/state/useOpenState"
 import { ExpandMoreIcon } from "@/app/ui/icons/ExpandMoreIcon"
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 
 export const DeskNavItemExpandable = forwardRef(({children, renderExpandMenu}, headerRef) => {

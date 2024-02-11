@@ -1,5 +1,6 @@
 import { SiteConfig } from "@/app/lib/SiteConfig";
 import { apiPreparedFetch } from "@/app/lib/api";
+import { Button } from "@/app/ui/buttons/Button";
 import { useEffect, useState } from "react"
 
 export const LoginBlock = () => {
@@ -31,6 +32,7 @@ export const LoginBlock = () => {
     }
 
     const handleLogin = async (e) => {
+        setError(null);
         e.preventDefault();
         try {
             const user = await apiPreparedFetch(SiteConfig.API_URL + '/api/login', formData, 'POST');
@@ -41,11 +43,17 @@ export const LoginBlock = () => {
     }
 
     const handleLogout = async () => {
+        setError(null);
         try {
             await apiPreparedFetch(SiteConfig.API_URL + '/api/logout');
             setUser(false);
         } catch(e) {
-            setError(e);
+            if(e instanceof SyntaxError) {
+                //c le cas d'une réponse vide (204)
+                setUser(false);
+            } else {
+                setError(e);
+            }
         }
     }
 
@@ -54,16 +62,16 @@ export const LoginBlock = () => {
     return (
         <div className="login-block">
             {
-                error && <div className="admin-main-error">{error.message}</div>
-            }
-            {
                 user && (
                     <div className="admin-user-card">
+                        {
+                            error && <div className="admin-main-error">{error.message}</div>
+                        }
                         <div>
-                            Connecté en tant que <strong>{user.username}</strong>.
+                            Connecté en tant que <strong>{user.username}</strong>
                         </div>
-                        <div>
-                            <button className="admin-table-control" type="button" onClick={handleLogout}>Déconnexion</button>
+                        <div style={{marginTop: '20px'}}>
+                            <Button additionalClass="secondary" onClick={handleLogout}>Déconnexion</Button>
                         </div>
                     </div>
                 )
@@ -79,6 +87,9 @@ export const LoginBlock = () => {
                 user === false && (
                     <form onSubmit={handleLogin} className="admin-login-form">
                         <div className="admin-login-title">Connexion</div>
+                        {
+                            error && <div className="admin-main-error">{error.message}</div>
+                        }
                         <div className="form-group">
                             <div className="form-label" htmlFor="username">Nom d'utilisateur</div>
                             <input className="form-control" type="text" id="username" name="username" value={formData.username} onChange={handleChange} />
@@ -87,7 +98,7 @@ export const LoginBlock = () => {
                             <div className="form-label" htmlFor="password">Mot de passe</div>
                             <input className="form-control" type="password" id="password" name="password" value={formData.password} onChange={handleChange} />
                         </div>
-                        <button className="button">Connexion</button>
+                        <button className="button">Valider</button>
                     </form>
                 )
             }

@@ -1,11 +1,14 @@
 'use client';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SiteConfig } from "../lib/SiteConfig"
 import { Loader } from "../ui/icons/Loader";
 import { useCRUD } from "./lib/useCRUD";
-import { AdminProjectTable } from "./ui/AdminProjectTable";
-import { AdminSkillTable } from "./ui/AdminSkillTable";
+import { AdminProjectTable } from "./ui/AdminProject/AdminProjectTable";
+import { AdminSkillTable } from "./ui/AdminSkill/AdminSkillTable";
 import { LoginBlock } from "./ui/LoginBlock";
+import { SkillForm } from "./ui/AdminSkill/SkillForm";
+import { Modal } from "../ui/container/Modal";
+import { useOpenState } from "../lib/customHooks/state/useOpenState";
 
 export default function Page() {
 
@@ -52,6 +55,7 @@ export default function Page() {
             {
                 skillError && skillError.message && <div className="admin-main-error">{skillError.message}</div>
             }
+            <LoginBlock />
             <div className="admin-home-block">
                 <h2 className="admin-home-block-title">Réalisations</h2>
                 <div className="admin-home-block-list project-list">
@@ -59,7 +63,7 @@ export default function Page() {
                         projectLoading && <Loader additionalClass="admin-main-loader" />
                     }
                     {
-                        projects && projects['hydra:member'] && (
+                        projects && projects.length > 0 && (
                             <AdminProjectTable 
                                 projects={projects} 
                                 update={updateProject} 
@@ -68,11 +72,7 @@ export default function Page() {
                         )
                     }
                 </div>
-                <div className="admin-home-block-footer">
-                    <button type="button" className="button">
-                        Ajouter un projet
-                    </button>
-                </div>
+                <AdminCreate create={createProject} type="project">Ajouter une réalisation</AdminCreate>
             </div>
             <div className="admin-home-block">
                 <h2 className="admin-home-block-title">Compétences</h2>
@@ -81,7 +81,7 @@ export default function Page() {
                         skillLoading && <Loader additionalClass="admin-main-loader" />
                     }
                     {
-                        skills && skills['hydra:member'] && (
+                        skills && skills.length > 0 && (
                             <AdminSkillTable 
                                 skills={skills} 
                                 update={updateSkill} 
@@ -90,13 +90,32 @@ export default function Page() {
                         )
                     }
                 </div>
-                <div className="admin-home-block-footer">
-                    <button type="button" className="button">
-                        Ajouter une compétence
-                    </button>
-                </div>
+                <AdminCreate create={createSkill} type="skill">Ajouter une compétence</AdminCreate>
             </div>
-            <LoginBlock />
         </div>
+    )
+}
+
+
+const AdminCreate = ({children, create, type}) => {
+
+    const [formIsOpen, openForm, closeForm] = useOpenState()
+
+    return (
+        <>
+            <div className="admin-home-block-footer">
+                <button type="button" className="button" onClick={openForm}>
+                    {children}
+                </button>
+            </div>
+            <Modal additionalClass="admin-form-modal" isOpen={formIsOpen}>
+                {
+                    // type === 'project' && <ProjectForm create={create} close={closeForm} />
+                }
+                {
+                    type === 'skill' && <SkillForm create={create} close={closeForm} />
+                }
+            </Modal>
+        </>
     )
 }

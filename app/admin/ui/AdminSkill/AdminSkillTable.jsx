@@ -1,4 +1,7 @@
+import { useOpenState } from "@/app/lib/customHooks/state/useOpenState"
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString"
+import { Modal } from "@/app/ui/container/Modal"
+import { SkillForm } from "./SkillForm"
 
 export const AdminSkillTable = ({skills, update, deleteSkill}) => {
     return (
@@ -13,7 +16,7 @@ export const AdminSkillTable = ({skills, update, deleteSkill}) => {
             </thead>
             <tbody>
                 {
-                    skills['hydra:member'].map(skill => (
+                    skills.map(skill => (
                         <AdminSkillItem 
                             key={skill.id} 
                             skill={skill}
@@ -34,6 +37,8 @@ const AdminSkillItem = ({skill, update, deleteSkill}) => {
             deleteSkill(skill.id);
         }
     }
+    
+    const [formIsOpen, openForm, closeForm] = useOpenState(false);
 
     return (
         <tr>
@@ -41,10 +46,13 @@ const AdminSkillItem = ({skill, update, deleteSkill}) => {
             <td>{skill.name}</td>
             <td>{getMonthAndYear(skill.learnedAt)}</td>
             <td>
-                <button type="button" className="admin-table-control">Modifier</button>
+                <button type="button" className="admin-table-control" onClick={openForm}>Modifier</button>
                 <span> / </span>
                 <button type="button" className="admin-table-control" onClick={handleDelete}>Supprimer</button>
             </td>
+            <Modal additionalClass="admin-form-modal" isOpen={formIsOpen}>
+                <SkillForm update={update} skill={skill} close={closeForm} />
+            </Modal>
         </tr>
     )
 }
