@@ -6,12 +6,18 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
-    transition: all ease-in-out .4s;
+    transition: all ease-in-out .3s;
 }
 .header.force-light-bg, .header.header-fixed.force-light-bg {
     background: none;
     background-color: #FFF;
     color: var(--color-black);
+}
+.header.force-light-bg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 .desktop-menu-nav-item {
     transition: all .3s;

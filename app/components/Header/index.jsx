@@ -48,9 +48,13 @@ export const Header = () => {
             if(scroll > (lastScroll + HEADER_SCROLL_DIRECTION_GAP)) {
                 ref.current.classList.remove('scroll-up');
                 ref.current.classList.add('scroll-down');
+                document.body.classList.remove('scroll-up');
+                document.body.classList.add('scroll-down');
             } else if(scroll < (lastScroll - HEADER_SCROLL_DIRECTION_GAP)) {
                 ref.current.classList.remove('scroll-down');
                 ref.current.classList.add('scroll-up');
+                document.body.classList.remove('scroll-down');
+                document.body.classList.add('scroll-up');
             }
             setLastScroll(scroll);
             setLastChange(Date.now());

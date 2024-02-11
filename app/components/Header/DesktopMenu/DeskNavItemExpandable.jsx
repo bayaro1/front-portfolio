@@ -20,9 +20,9 @@ export const DeskNavItemExpandable = forwardRef(({children, renderExpandMenu}, h
     useEffect(() => {
         if(headerRef.current) {
             if(isOpen) {
-                headerRef.current.classList.add('force-open', 'force-light-bg');
+                headerRef.current.classList.add('force-open', 'force-light-bg', 'menu-expanded');
             } else {
-                headerRef.current.classList.remove('force-open', 'force-light-bg');
+                headerRef.current.classList.remove('force-open', 'force-light-bg', 'menu-expanded');
             }
         }
     }, [isOpen]);

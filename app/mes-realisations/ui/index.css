@@ -63,21 +63,25 @@
 
 
 @media only screen and (min-width: 460px) {
-    .project-index {
+    .project-index, .skeleton-project-index {
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
     }
-    .project-index .project-item {
+    .skeleton-project-index-wrapper {
+        max-width: var(--page-container-width);
+        margin: 0 auto;
+    }
+    .project-index .project-item, .skeleton-project-index-item {
         margin: 0;
     }
-    .project-index .project-item {
+    .project-index .project-item, .skeleton-project-index-item {
         width: calc(50% - 8px);
     }
 }
 
 @media only screen and (min-width: 700px) {
-    .project-index .project-item {
+    .project-index .project-item, .skeleton-project-index-item {
         width: calc(33% - 15px);
         max-width: 300px;
     }
@@ -88,10 +92,10 @@
         background: linear-gradient(to right bottom, rgba(255, 255, 255, .2), rgba(0, 0, 0, .3)),
                     url("/img/banner.jpg") center center / cover no-repeat;
     }
-    .project-index {
+    .project-index, .skeleton-project-index {
         gap: 30px;
     }
-    .project-index .project-item {
+    .project-index .project-item, .skeleton-project-index-item {
         width: calc(33% - 20px);
         max-width: 300px;
     }
