@@ -13,7 +13,7 @@ import { SiteConfig } from '@/app/lib/SiteConfig';
 
 const HEADER_FIXED_SCROLL_MIN = 70;
 
-const HEADER_SCROLL_DIRECTION_GAP = 70;
+const HEADER_SCROLL_DIRECTION_GAP = 20;
 
 const HEADER_SCROLL_LISTENER_INTERVAL = 500;
 

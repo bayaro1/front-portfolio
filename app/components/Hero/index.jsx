@@ -40,7 +40,14 @@ export const Hero = () => {
                         <Contact />
                     </div>
                 </div>
-                <img className="hero-screen" src="/img/hero_screenshot.jpg" alt="Capture d'écran de ma dernière réalisation : cocktailissimo.com" />
+                <div className="hero-screen-wrapper">
+                    <a href="https://cocktailissimo.com" title="https://cocktailissimo.com">
+                        <img className="hero-screen" src="/img/hero_screenshot.png" alt="Capture d'écran de ma dernière réalisation : cocktailissimo.com" />
+                    </a>
+                    <div className="hero-screen-legend">
+                        Ma dernière réalisation. La marketplace <a href="https://cocktailissimo.com">cocktailissimo.com</a>
+                    </div>
+                </div>
             </div>
         </main>
     )

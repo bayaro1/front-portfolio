@@ -1,0 +1,49 @@
+.admin-page {
+    max-width: var(--page-container-width);
+    padding: 0 15px;
+    margin: 20px auto 100px;
+}
+
+.admin-title {
+    font-weight: 600;
+    font-size: 1.7em;
+}
+
+.admin-home-block {
+    border: solid 1px rgb(225, 225, 225);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+.admin-home-block-title {
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.admin-table {
+    width: 100%;
+}
+.admin-table td, .admin-table th {
+    text-align: center;
+    padding: 5px 15px;
+}
+
+.admin-table-control {
+    font-weight: 600;
+}
+
+.admin-home-block-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-home-block .button {
+    background-color: var(--color-base);
+}
+.admin-home-block .button:hover {
+    background-color: var(--color-base-flash);
+}

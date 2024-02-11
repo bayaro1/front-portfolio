@@ -1,5 +1,3 @@
-- refaire hero_screenshot en png pour la transparence et rajouter ombres autour de chaque screenshot, et essayer d'incurver les mobiles.
-
 - admin
 
 - une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec bonne picture du logo 

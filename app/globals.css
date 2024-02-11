@@ -141,10 +141,10 @@ input {
 .page {
     margin: 20px 15px 80px;
 }
-.header-fixed + .hero-bis {
+.header-fixed + .hero-bis, .header.force-open + .hero-bis {
     margin-top: 70px;
 }
-.header-fixed + .hero {
+.header-fixed + .hero, .header.force-open + .hero {
     margin-top: 0;
 }
 
