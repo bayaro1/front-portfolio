@@ -5,6 +5,7 @@ import { reverseAnimation } from "@/app/lib/animations/heroAnimation";
 import '@/app/components/Hero/index.css';
 import { Contact } from "@/app/components/Hero/Contact";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Hero = () => {
 
@@ -26,17 +27,20 @@ export const Hero = () => {
             </div>
             <div ref={refBgB} className="hero-bg b">
             </div>
-            <div className="hero-text">
-                <div className="hero-title-wrapper">
-                    <h1 className="hero-title">Besoin d'un développeur web ?</h1>
-                    <p className="hero-subtitle">Je suis Ibai Arotçarena, développeur Symfony / React. Je me suis formé en autodidacte depuis 2021.</p>
+            <div className="hero-row">
+                <div className="hero-text">
+                    <div className="hero-title-wrapper">
+                        <h1 className="hero-title">Besoin d'un développeur web ?</h1>
+                        <p className="hero-subtitle">Je suis Ibai Arotçarena, développeur Symfony / React. Je me suis formé en autodidacte depuis 2021.</p>
+                    </div>
+                    <div className="hero-cta-wrapper">
+                        <Link className="button" href="/mes-realisations">
+                            Mes réalisations
+                        </Link>
+                        <Contact />
+                    </div>
                 </div>
-                <div className="hero-cta-wrapper">
-                    <Link className="button" href="/mes-realisations">
-                        Mes réalisations
-                    </Link>
-                    <Contact />
-                </div>
+                <img className="hero-screen" src="/img/hero_screenshot.jpg" alt="Capture d'écran de ma dernière réalisation : cocktailissimo.com" />
             </div>
         </main>
     )

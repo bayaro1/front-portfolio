@@ -61,6 +61,7 @@
     .skeleton-container {
         max-width: var(--page-container-width);
         margin: 0 auto;
+        padding: 0 15px;
     }
     .skeleton-only-desktop {
         display: block;

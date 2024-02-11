@@ -167,8 +167,30 @@ input {
     max-width: var(--page-container-width);
 }
 
-.hero-bis-title {
+.hero-bis-img {
+    height: 500px;
+    max-height: 30vh;
+    background: url("/img/banner.jpg") center center / cover no-repeat;
+    margin-top: -70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-bis-img .hero-text {
+    margin-top: auto;
+    color: #FFF;
+}
+.hero-text-bis {
+    margin-top: auto;
+}
+.hero-title-bis {
+    font-size: 2.7em;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #FFF;
+    padding: 15px;
     max-width: var(--page-container-width);
+    margin: 0 auto;
 }
 
 

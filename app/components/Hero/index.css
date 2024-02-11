@@ -33,7 +33,7 @@
     position: relative;
     z-index: 1;
     margin-top: 90px;
-    max-width: 600px;
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -95,8 +95,19 @@
     .hero-cta-wrapper .button {
         height: 70px;
     }
+    .hero-row {
+        display: flex;
+    }
+    .hero-screen, .hero-text {
+        width: 50%;
+        flex: none;
+    }
+    .hero-screen {
+        position: relative;
+        z-index: 1;
+    }
     .hero-title {
-        font-size: 4em;
+        font-size: 3.2em;
     }
     .hero {
         max-height: none;
@@ -109,5 +120,11 @@
 @media only screen and (min-width: 1600px) {
     .hero-bg {
         bottom: 95%;
+    }
+    .hero-title {
+        font-size: 4em;
+    }
+    .hero-row {
+        gap: 50px;
     }
 }

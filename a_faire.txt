@@ -1,8 +1,6 @@
+- refaire hero_screenshot en png pour la transparence et rajouter ombres autour de chaque screenshot, et essayer d'incurver les mobiles.
 
-bugs à corriger :
-
-    - arranger la banner avec gimp pour que les textes apparaissent bien : en haut à gauche plus blanc et en haut à droite plus sombre
-    - mettre screenshots de différentes pages de cocktailissimo sur la homepage à droite de "besoin d'un dév web ?" sur desktop
+- admin
 
 - une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec bonne picture du logo 
 

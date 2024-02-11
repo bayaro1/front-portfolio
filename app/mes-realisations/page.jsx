@@ -14,8 +14,8 @@ export default function Page() {
         <>
             <main className="hero-bis">
                 <div className="hero-bis-img">
-                    <div className="hero-text">
-                        <h1 className="hero-title hero-title-bis">Mes réalisations</h1>
+                    <div className="hero-text-bis">
+                        <h1 className="hero-title-bis">Mes réalisations</h1>
                     </div>
                 </div>
             </main>
