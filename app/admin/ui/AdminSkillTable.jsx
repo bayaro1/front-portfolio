@@ -15,7 +15,7 @@ export const AdminSkillTable = ({skills, update, deleteSkill}) => {
                 {
                     skills['hydra:member'].map(skill => (
                         <AdminSkillItem 
-                            key={skill} 
+                            key={skill.id} 
                             skill={skill}
                             update={update}
                             deleteSkill={deleteSkill}
@@ -41,6 +41,8 @@ const AdminSkillItem = ({skill, update, deleteSkill}) => {
             <td>{skill.name}</td>
             <td>{getMonthAndYear(skill.learnedAt)}</td>
             <td>
+                <button type="button" className="admin-table-control">Modifier</button>
+                <span> / </span>
                 <button type="button" className="admin-table-control" onClick={handleDelete}>Supprimer</button>
             </td>
         </tr>

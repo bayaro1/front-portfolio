@@ -47,3 +47,29 @@
 .admin-home-block .button:hover {
     background-color: var(--color-base-flash);
 }
+
+.admin-main-loader {
+    margin: 20px auto;
+}
+
+.admin-main-error {
+    background-color: #ffc8c8;
+    color: red;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 6px;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+.form-control {
+    height: 40px;
+    width: 100%;
+    border: var(--border-input);
+    padding: 0 10px;
+    border-radius: 6px;
+}
+.form-control:focus {
+    outline: var(--outline-input);
+}

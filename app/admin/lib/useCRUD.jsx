@@ -20,7 +20,7 @@ const reducer = (items, action) => {
  * @param {boolean} initialFetch 
  * @returns 
  */
-export const useCRUD = (baseEntrypoint, initialFetch = false) => {
+export const useCRUD = (baseEntrypoint, createEntrypoint = null, updateEntrypoint = null, deleteEntrypoint = null, initialFetch = false) => {
     const [items, dispatch] = useReducer(reducer, []);
     const [error, setError] = useState(null);
     const [isLoading, setLoading] = useState(null);
@@ -29,6 +29,7 @@ export const useCRUD = (baseEntrypoint, initialFetch = false) => {
      * @param {string} params (paramètres GET) 
      */
     const fetchAll = async (params = {}) => {
+        setError(null);
         setLoading(true);
         try {
             const items = await apiPreparedFetch(baseEntrypoint, params, 'GET');
@@ -40,8 +41,9 @@ export const useCRUD = (baseEntrypoint, initialFetch = false) => {
     };
 
     const create = async () => {
+        setError(null);
         try {
-            const createdItem = await apiPreparedFetch(baseEntrypoint, {}, 'POST');
+            const createdItem = await apiPreparedFetch(createEntrypoint ?? baseEntrypoint, {}, 'POST');
             dispatch({type: 'CREATE', payload: createdItem});
         } catch(e) {
             setError(e);
@@ -52,8 +54,9 @@ export const useCRUD = (baseEntrypoint, initialFetch = false) => {
      * @param {number} id (id de l'item à modifier)
      */
     const update = async (id, item) => {
+        setError(null);
         try {
-            const updatedItem = await apiPreparedFetch(baseEntrypoint + '/' + id, item, 'PATCH');
+            const updatedItem = await apiPreparedFetch((updateEntrypoint ?? baseEntrypoint) + '/' + id, item, 'PATCH');
             dispatch({type: 'UPDATE', target: id, payload: updatedItem});
         } catch(e) {
             setError(e);
@@ -64,8 +67,9 @@ export const useCRUD = (baseEntrypoint, initialFetch = false) => {
      * @param {number} id (id de l'item à supprimer) 
      */
     const deleteItem = async (id) => {
+        setError(null);
         try {
-            await apiPreparedFetch(baseEntrypoint + '/' + id, {}, 'DELETE');
+            await apiPreparedFetch((deleteEntrypoint ?? baseEntrypoint) + '/' + id, {}, 'DELETE');
             dispatch({type: 'DELETE', target: id});
         } catch(e) {
             setError(e);

@@ -1,4 +1,7 @@
 - admin
+    - gérer la connexion : il faut envoyer les cookies avec samesite = lax
+    - voir pourquoi ça bug quand on entre d identifiants invalides
+    - mettre en place update et create
 
 - une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec bonne picture du logo 
 

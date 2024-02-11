@@ -16,7 +16,7 @@ export const AdminProjectTable = ({projects, update, deleteProject}) => {
                 {
                     projects['hydra:member'].map(project => (
                         <AdminProjectItem 
-                            key={project} 
+                            key={project.id} 
                             project={project}
                             update={update}
                             deleteProject={deleteProject}
@@ -43,6 +43,8 @@ const AdminProjectItem = ({project, update, deleteProject}) => {
             <td>{getMonthAndYear(project.startedAt)}</td>
             <td>{getMonthAndYear(project.endAt)}</td>
             <td>
+                <button type="button" className="admin-table-control">Modifier</button>
+                <span> / </span>
                 <button type="button" className="admin-table-control" onClick={handleDelete}>Supprimer</button>
             </td>
         </tr>

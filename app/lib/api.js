@@ -11,10 +11,9 @@ export const apiFetch = async (entrypoint, options = {}) => {
     if(response.ok) {
         return data;
     }
-    if(data.errors) {
-        throw new ApiError(data.errors);
+    if(data.status && data.detail) {
+        throw new Error('Error ' + data.status + ' : ' + data.detail);
     }
-    throw new Error('fetch error');
 }
 
 export class ApiError {
