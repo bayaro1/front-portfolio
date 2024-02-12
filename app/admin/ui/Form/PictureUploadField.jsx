@@ -8,12 +8,20 @@ import { EditIcon } from '@/app/ui/icons/EditIcon';
 import { PlusIcon } from '@/app/ui/icons/PlusIcon';
 
 
-/**
- * 
- * @param {array} errors 
- * @returns 
- */
-export const PictureUploadField = ({children, name, errors, setErrors, resizeWidth = 500, resizeHeight = 500, defaultBase64img = '', onChange = null}) => {
+
+export const PictureUploadField = ({
+  children, 
+  name, 
+  errors, 
+  setErrors, 
+  resizeWidth = 500, 
+  resizeHeight = 500, 
+  defaultBase64img = '', 
+  onChange = null, 
+  outputFormat = 'jpeg', 
+  acceptedFormats = ['jpg', 'jpeg', 'png']}
+) => {
+
   useEffect(() => {
       setSelectedImg(defaultBase64img);
       setHiddenImg(defaultBase64img);
@@ -40,13 +48,13 @@ export const PictureUploadField = ({children, name, errors, setErrors, resizeWid
       return;
     }
     if(!['image/jpg', 'image/jpeg', 'image/png'].includes(img.type)) {
-      setErrors('Format incorrect. Formats acceptés : jpg, jpeg, png');
+      setErrors('Format incorrect. Formats acceptés : '+acceptedFormats.split(','));
       return;
     }
     //resize
     setLoading(true);
     resizeImage(img, {
-        outputFormat: 'jpeg',
+        outputFormat: outputFormat,
         targetWidth: resizeWidth,
         targetHeight: resizeHeight,
         crop: true

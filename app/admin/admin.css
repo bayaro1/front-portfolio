@@ -1,7 +1,13 @@
 .admin-page {
-    max-width: var(--page-container-width);
-    padding: 0 15px;
-    margin: 20px auto 100px;
+    padding: 0 30px;
+    margin: 20px 0 100px;
+}
+
+.hero-title-bis.admin-hero-title-bis {
+    padding: 15px 30px;
+    max-width: none;
+    margin: 0;
+    text-align: center;
 }
 
 .admin-title {
@@ -123,8 +129,8 @@
 
 
 .form-upload-wrapper {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border: dashed 1px;
     border-radius: 10px;
     justify-content: center;
@@ -152,7 +158,7 @@
 .form-group .form-upload-trash-button {
     position: absolute;
     bottom: 0;
-    left: 70px;
+    left: 50px;
 }
 .form-group .form-upload-trash-button .i-trash {
     width: 1.2em;
@@ -174,4 +180,8 @@
 .form-upload-wrapper:hover .i-edit {
     position: absolute;
     z-index: 1;
+}
+
+.admin-table-subline {
+    background-color: rgb(245, 245, 245);
 }

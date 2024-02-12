@@ -99,10 +99,12 @@ export const SkillForm = ({update, create, skill, close}) => {
             <PictureUploadField 
                 errors={logoErrors}
                 setErrors={setLogoErrors}
-                resizeWidth={60}
-                resizeHeight={60}
+                resizeWidth={40}
+                resizeHeight={40}
                 defaultBase64img={fullSkill?.logoBase64}
                 onChange={handleChangeLogo}
+                acceptedFormats={['png']}
+                outputFormat="png"
             >
                 Logo
             </PictureUploadField>

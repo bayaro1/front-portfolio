@@ -6,7 +6,7 @@ export default function Layout({children}) {
             <main className="hero-bis">
                 <div className="hero-bis-img">
                     <div className="hero-text-bis">
-                        <h1 className="hero-title-bis">Administration</h1>
+                        <h1 className="hero-title-bis admin-hero-title-bis">Administration</h1>
                     </div>
                 </div>
             </main>

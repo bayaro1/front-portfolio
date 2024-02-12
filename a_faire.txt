@@ -1,13 +1,14 @@
-- admin
-    - comments
-
     
-- afficher project.type sur index et show
-- prendre en compte que certaines propriétés sont facultatives : url, endAt, longDescription et les photos
 
-- une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec picture du logo en dur 
+- changer image par défaut sur back
+
+- vérifier l'upload de logo (nouveau : png)
 
 - mettre toutes mes compétences dans le footer : organisées par frameworks & langages  -  Autres outils
+
+coté back
+- ajouter liip_imagine_bundle pour mettre des filtres pour les screenshots (show: pour la page show et index: pour le header)
+
 
 
 - voir si on peut servir en https en local et voir si on peut utiliser les server-components async du coup
@@ -21,3 +22,5 @@
 
 
 - sauvegarder tous les composants réutilisables dans un dossier
+
+

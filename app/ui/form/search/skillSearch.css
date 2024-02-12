@@ -72,3 +72,17 @@
     flex: none;
     display: block;
 }
+
+.skill-list-item-body {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+@media only screen and (min-width: 1050px) {
+    .skill-list-item-title {
+        font-size: 1.2em;
+    }
+}

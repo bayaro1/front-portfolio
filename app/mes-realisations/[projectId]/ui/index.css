@@ -74,6 +74,7 @@
     }
     .project-item-body, .skeleton-project-show-right-col {
         max-width: 500px;
+        min-width: 300px;
     }
     .skeleton-project-show-right-col {
         width: 500px;

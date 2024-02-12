@@ -2,6 +2,7 @@ import { useOpenState } from "@/app/lib/customHooks/state/useOpenState"
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString"
 import { Modal } from "@/app/ui/container/Modal"
 import { SkillForm } from "./SkillForm"
+import { SiteConfig } from "@/app/lib/SiteConfig"
 
 export const AdminSkillTable = ({skills, update, deleteSkill}) => {
     return (
@@ -9,6 +10,7 @@ export const AdminSkillTable = ({skills, update, deleteSkill}) => {
             <thead>
                 <tr>
                     <th>#ID</th>
+                    <th>Logo</th>
                     <th>Nom</th>
                     <th>Depuis</th>
                     <th></th>
@@ -43,9 +45,12 @@ const AdminSkillItem = ({skill, update, deleteSkill}) => {
     return (
         <tr>
             <td>{skill.id}</td>
+            <td>
+                <img width="40px" height="40px" style={{margin: '0 auto'}} src={SiteConfig.API_URL + skill.logoPath} alt="Logo" />
+            </td>
             <td>{skill.name}</td>
             <td>{getMonthAndYear(skill.learnedAt)}</td>
-            <td>
+            <td style={{width: '250px'}}>
                 <button type="button" className="admin-table-control" onClick={openForm}>Modifier</button>
                 <span> / </span>
                 <button type="button" className="admin-table-control" onClick={handleDelete}>Supprimer</button>
