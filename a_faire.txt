@@ -1,17 +1,12 @@
     
 
-- changer image par défaut sur back
+- bug : quand on modifie un skill/project, la picture actuelle ne s'affiche pas dans le form 
+            - apparemment le pb vient de la requête pour récupérer fullProject/skill cette requete ne reçois jamais de réponse
 
-- vérifier l'upload de logo (nouveau : png)
-
-- mettre toutes mes compétences dans le footer : organisées par frameworks & langages  -  Autres outils
-
-coté back
-- ajouter liip_imagine_bundle pour mettre des filtres pour les screenshots (show: pour la page show et index: pour le header)
+- déployer
 
 
-
-- voir si on peut servir en https en local et voir si on peut utiliser les server-components async du coup
+- voir si on peut servir en https en local ou mettre l'api sur http et voir si on peut utiliser les server-components async du coup
 - attention : est-ce que ça pose un problème pour les exports statiques ?
 
 - voir si en production je peux utiliser un server-component async avec suspense pour mes-realisation/ProjectsList.jsx
@@ -24,3 +19,4 @@ coté back
 - sauvegarder tous les composants réutilisables dans un dossier
 
 
+- mettre en place eventSubscriber pour vider les filtres images en cache lors de suppression d'image

@@ -11,7 +11,7 @@ export const ProjectItem = ({project}) => {
             <Link href={'/mes-realisations/'+project.id}>
                 <img
                     className="project-item-img"
-                    src={SiteConfig.API_URL + project.screenDesktopPath}
+                    src={project.screenDesktopPath}
                     alt={'Capture d\'écran de ' + project.title}
                 />
             </Link>
@@ -29,6 +29,9 @@ export const ProjectItem = ({project}) => {
                 <p className="project-item-text">
                     {project.shortDescription}
                 </p>
+                <div>
+                    <a className="base-link" href={'/mes-realisations/'+project.id}>Voir plus</a>
+                </div>
             </div>
         </div>
     );

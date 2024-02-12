@@ -55,7 +55,7 @@ export const SkillSearch = forwardRef((props, headerRef) => {
             <input 
                 onChange={handleChange}
                 onFocus={open}
-                onBlur={close}
+                onBlur={handleEmpty}
                 value={q} 
                 className={'search-input' + (isOpen ? ' open': '')}
                 placeholder="Rechercher une compétence" 
@@ -88,7 +88,7 @@ export const SkillSearch = forwardRef((props, headerRef) => {
     )
 });
 
-const SkillItem = ({skill}) => {
+export const SkillItem = ({skill}) => {
 
     return (
         <div className="skill-list-item">
@@ -96,7 +96,7 @@ const SkillItem = ({skill}) => {
                 className="skill-list-item-img"
                 width="35px"
                 height="35px" 
-                src={SiteConfig.API_URL + skill.logoPath} 
+                src={skill.logoPath} 
                 alt={'Logo de ' + skill.name}
             />
             <div className="skill-list-item-body">

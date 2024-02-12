@@ -33,6 +33,9 @@
     width: 1em;
     height: 1em;
 }
+.search-wrapper .loader {
+    opacity: .7;
+}
 .search-wrapper .close-button, .search-wrapper .loader, .search-wrapper .i-search {
     position: absolute;
     top: calc(50% - .5em);

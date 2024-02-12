@@ -10,14 +10,14 @@ export const ProjectShow = ({project}) => {
     const pictures = [
         {
             id: 1,
-            src: SiteConfig.API_URL + project.screenMobilePath,
-            srcSmall: SiteConfig.API_URL + project.screenMobilePath,
+            src: project.screenMobilePath,
+            srcSmall: project.screenMobilePath,
             alt: 'Capture d\'écran de ' + project.title
         },
         {
             id: 2,
-            src: SiteConfig.API_URL + project.screenDesktopPath,
-            srcSmall: SiteConfig.API_URL + project.screenDesktopPath,
+            src: project.screenDesktopPath,
+            srcSmall: project.screenDesktopPath,
             alt: 'Capture d\'écran de ' + project.title
         }
     ];

@@ -39,7 +39,7 @@ export const DeskProjectsMenu = ({fetchProjects, projects, closeExpandMenu}) => 
                             <Link onClick={closeExpandMenu} href={'/mes-realisations/'+project.id}>
                                 <img 
                                     className="mobile-menu-project-img"
-                                    src={SiteConfig.API_URL + project.screenDesktopPath}
+                                    src={project.screenDesktopPath}
                                     alt={'Capture d\'écran du site ' + project.title}
                                 />
                             </Link>

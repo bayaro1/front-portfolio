@@ -46,7 +46,7 @@ const AdminSkillItem = ({skill, update, deleteSkill}) => {
         <tr>
             <td>{skill.id}</td>
             <td>
-                <img width="40px" height="40px" style={{margin: '0 auto'}} src={SiteConfig.API_URL + skill.logoPath} alt="Logo" />
+                <img width="40px" height="40px" style={{margin: '0 auto'}} src={skill.logoPath ?? skill.logoBase64} alt="Logo" />
             </td>
             <td>{skill.name}</td>
             <td>{getMonthAndYear(skill.learnedAt)}</td>

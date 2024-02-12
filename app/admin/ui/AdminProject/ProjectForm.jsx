@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { PictureUploadField } from "../Form/PictureUploadField";
 import { apiPreparedFetch } from "@/app/lib/api";
+import { SiteConfig } from "@/app/lib/SiteConfig";
 
 
 
@@ -19,8 +20,8 @@ const schema = yup
     url: yup.string().max(200, {message: '200 caractères maximum'}),
     shortDescription: yup.string().max(250, {message: '250 caractères maximum'}).required('La description courte est obligatoire'),
     longDescription: yup.string().max(2000, {message: '2000 caractères maximum'}),
-    startedAt: yup.string().length(19, 'Format incorrect (format attendu - Y:m:d H:i:s)').required('La date de début est obligatoire'),
-    endAt: yup.string().length(19, 'Format incorrect (format attendu - Y:m:d H:i:s)'),
+    startedAt: yup.string().max(200, 'Format incorrect (format attendu - Y:m:d H:i:s)').required('La date de début est obligatoire'),
+    endAt: yup.string().max(200, 'Format incorrect (format attendu - Y:m:d H:i:s)'),
   })
   .required();
 
@@ -84,7 +85,7 @@ export const ProjectForm = ({update, create, project, close}) => {
     //si on est dans update, on fetch la skill complète pour avoir skill.logoBase64
     const fetchFullProject = async () => {
         try {
-            const fullProject = await apiPreparedFetch('/api/admin/project' + project.id);
+            const fullProject = await apiPreparedFetch(SiteConfig.API_URL +'/api/admin/project/' + project.id);
             setFullProject(fullProject);
         } catch(e) {
             console.error('Erreur dans le fetch du fullProject');
@@ -134,6 +135,7 @@ export const ProjectForm = ({update, create, project, close}) => {
             >
                 Screenshot Desktop
             </PictureUploadField>
+            
 
             <TextareaField fieldName="shortDescription" control={control} error={errors.shortDescription?.message} maxLength={250}>
                 Description courte

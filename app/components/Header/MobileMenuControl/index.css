@@ -2,7 +2,7 @@
     from {
         background-color: transparent;
     } to {
-        background-color: #FFF;
+        background-color: rgba(0, 0, 0, .5);
     }
 }
 @keyframes mobileMenuContainerClose {
@@ -33,11 +33,13 @@
 
 .mobile-menu-container {
     animation: mobileMenuContainerOpen forwards 1s;
+    background-color: rgba(0, 0, 0, .5);
 }
 .mobile-menu {
     animation: mobileMenuOpen forwards .5s;
     height: 100%;
     position: relative;
+    background-color: #FFF;
 }
 .mobile-menu-container.close {
     animation: mobileMenuContainerClose forwards 1s;
@@ -113,7 +115,7 @@
 
 .expandable-menu-item {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     margin: 20px 20px;
 }
 .expandable-menu-item:first-child {
@@ -131,7 +133,6 @@
 .mobile-menu-project-img {
     width: 80px;
     height: 120px;
-    display: block;
     overflow: hidden;
     border-radius: 10px;
     flex: none;
@@ -153,4 +154,16 @@
 }
 .mobile-menu-project-item-body .base-link {
     font-size: 1.2em;
+}
+
+.mobile-menu-nav .mobile-menu-project-item-body {
+    align-items: flex-start;
+    text-align: left;
+}
+
+
+@media only screen and (min-width: 575px) {
+    .mobile-menu {
+        max-width: 500px;
+    }
 }

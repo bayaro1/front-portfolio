@@ -44,11 +44,12 @@ export const ProjectsMenu = ({projects, fetchProjects, closeMobileMenu}) => {
                 projects.map(project => (
                     <div key={project.id} className="expandable-menu-item mobile-menu-project-item">
                         <Link onClick={closeMobileMenu} href={'/mes-realisations/'+project.id}>
-                            <img 
+                            <div 
                                 className="mobile-menu-project-img"
-                                src={SiteConfig.API_URL + project.screenMobilePath}
-                                alt={'Capture d\'écran du site ' + project.title}
-                            />
+                                style={{background: 'url('+project.screenMobilePath+') center center / cover no-repeat'}}
+                                // src={project.screenMobilePath}
+                                // alt={'Capture d\'écran du site ' + project.title}
+                            ></div>
                         </Link>
                         <div className="mobile-menu-project-item-body">
                             <div className="mobile-menu-project-title">

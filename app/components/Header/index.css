@@ -54,6 +54,12 @@
     background-color: rgba(255, 255, 255, .2);
     border-radius: 1000px;
 }
+.header.header-fixed .menu-button {
+    box-shadow: 0 0 2px var(--color-black);
+}
+.header.header-fixed .menu-button .i-menu {
+    color: rgb(150, 150, 150);
+}
 
 .header .logo {
     margin-right: 15px;
@@ -111,8 +117,8 @@
     }
     .desktop-menu-nav-item .search-wrapper .icon, .desktop-menu-nav-item .search-wrapper .loader {
         color: var(--color-black);
-        width: 1.1em;
-        height: 1.1em;
+        width: 1.25em;
+        height: 1.25em;
         top: calc(50% - .6em);
     }
 }

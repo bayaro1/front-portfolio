@@ -5,7 +5,7 @@ import { SkillSearch } from "@/app/ui/form/search/SkillSearch"
 import { NavitemExpandable } from "@/app/ui/nav/NavItemExpandable"
 import { ProjectsMenu } from "@/app/components/Header/MobileMenuControl/ProjectsMenu"
 import { CvMenu } from "@/app/components/Header/MobileMenuControl/CvMenu"
-import { Footer } from "@/app/components/Footer";
+import { Footer, ProfileFooter } from "@/app/components/Footer";
 import { useRef } from "react";
 
 export const MobileMenu = ({fetchProjects, projects, close}) => {
@@ -36,7 +36,9 @@ export const MobileMenu = ({fetchProjects, projects, close}) => {
                     Mon CV
                 </NavitemExpandable>
             </nav>
-            <Footer additionalClass="mobile-menu-footer" />
+            <footer className="footer mobile-menu-footer">
+                <ProfileFooter />
+            </footer>
         </>
     )
 }
