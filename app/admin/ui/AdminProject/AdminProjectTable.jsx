@@ -1,4 +1,7 @@
+import { useOpenState } from "@/app/lib/customHooks/state/useOpenState";
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
+import { Modal } from "@/app/ui/container/Modal";
+import { ProjectForm } from "./ProjectForm";
 
 export const AdminProjectTable = ({projects, update, deleteProject}) => {
     return (
@@ -36,6 +39,8 @@ const AdminProjectItem = ({project, update, deleteProject}) => {
         }
     }
 
+    const [formIsOpen, openForm, closeForm] = useOpenState(false);
+
     return (
         <tr>
             <td>{project.id}</td>
@@ -43,10 +48,13 @@ const AdminProjectItem = ({project, update, deleteProject}) => {
             <td>{getMonthAndYear(project.startedAt)}</td>
             <td>{getMonthAndYear(project.endAt)}</td>
             <td>
-                <button type="button" className="admin-table-control">Modifier</button>
+                <button type="button" className="admin-table-control" onClick={openForm}>Modifier</button>
                 <span> / </span>
                 <button type="button" className="admin-table-control" onClick={handleDelete}>Supprimer</button>
             </td>
+            <Modal additionalClass="admin-form-modal" isOpen={formIsOpen}>
+                <ProjectForm update={update} project={project} close={closeForm} />
+            </Modal> 
         </tr>
     )
 }

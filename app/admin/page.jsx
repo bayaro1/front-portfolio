@@ -9,6 +9,8 @@ import { LoginBlock } from "./ui/LoginBlock";
 import { SkillForm } from "./ui/AdminSkill/SkillForm";
 import { Modal } from "../ui/container/Modal";
 import { useOpenState } from "../lib/customHooks/state/useOpenState";
+import { ProjectForm } from "./ui/AdminProject/ProjectForm";
+import { AdminCommentTable } from "./ui/AdminComment/AdminCommentTable";
 
 export default function Page() {
 
@@ -92,6 +94,12 @@ export default function Page() {
                 </div>
                 <AdminCreate create={createSkill} type="skill">Ajouter une compétence</AdminCreate>
             </div>
+            <div className="admin-home-block">
+                <h2 className="admin-home-block-title">Commentaires</h2>
+                <div className="admin-home-block-list admin-table-skill-list">
+                    <AdminCommentTable />
+                </div>
+            </div>
         </div>
     )
 }
@@ -110,7 +118,7 @@ const AdminCreate = ({children, create, type}) => {
             </div>
             <Modal additionalClass="admin-form-modal" isOpen={formIsOpen}>
                 {
-                    // type === 'project' && <ProjectForm create={create} close={closeForm} />
+                    type === 'project' && <ProjectForm create={create} close={closeForm} />
                 }
                 {
                     type === 'skill' && <SkillForm create={create} close={closeForm} />

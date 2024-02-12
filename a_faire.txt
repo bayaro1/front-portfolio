@@ -1,9 +1,11 @@
 - admin
-    OK skill
-    - project
-    - ajouter les champs image
+    - comments
 
-- une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec bonne picture du logo 
+    
+- afficher project.type sur index et show
+- prendre en compte que certaines propriétés sont facultatives : url, endAt, longDescription et les photos
+
+- une fois admin ok, gérer la defaultSkills list : mettre mes 5 compétences principales avec picture du logo en dur 
 
 - mettre toutes mes compétences dans le footer : organisées par frameworks & langages  -  Autres outils
 

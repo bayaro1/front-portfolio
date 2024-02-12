@@ -1,7 +1,7 @@
 import '@/app/ui/buttons/index.css';
 import { Loader } from '@/app/ui/icons/Loader';
 
-export const Button = ({additionalClass, children, isLoading, onClick, type = 'button', ...props}) => {
+export const Button = ({additionalClass, children, isLoading, onClick, type = 'button', disabled, ...props}) => {
 
     const handleClick = e => {
         if(type !== 'submit') {
@@ -14,8 +14,8 @@ export const Button = ({additionalClass, children, isLoading, onClick, type = 'b
 
     return (
         <button 
-            className={'button' + (additionalClass ? ' '+additionalClass: '') + (isLoading ? ' disabled': '')} 
-            disabled={isLoading}
+            className={'button' + (additionalClass ? ' '+additionalClass: '') + (isLoading || disabled ? ' disabled': '')} 
+            disabled={isLoading || disabled}
             onClick={handleClick} 
             type={type}
             {...props}

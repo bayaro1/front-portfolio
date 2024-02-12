@@ -62,7 +62,7 @@ export const SkillSearch = forwardRef((props, headerRef) => {
             />
             <SearchIcon />
             {
-                (!isLoading && isOpen) && (
+                (!isLoading && (isOpen || q.length > 0)) && (
                     <CloseButton aria-label="Vider le champ et fermer" title="Vider le champ et fermer" onClick={handleEmpty} />
                 )
             }

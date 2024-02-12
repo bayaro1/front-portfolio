@@ -101,7 +101,7 @@
     align-items: center;
 }
 .admin-form-modal {
-    width: 450px;
+    width: 600px;
     max-width: 80vw;
     max-height: 80vh;
     overflow-y: auto;
@@ -109,9 +109,69 @@
     border-radius: 10px;
     padding: 10px 20px;
 }
+.admin-form-modal .form-control {
+    max-width: none;
+}
 .admin-form-modal .button {
     margin: 4px auto;
 }
 .admin-submit-group {
     margin-top: 20px;
+}
+
+
+
+
+.form-upload-wrapper {
+    width: 60px;
+    height: 60px;
+    border: dashed 1px;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.project-form .form-upload-wrapper {
+    width: 150px;
+    height: 150px;
+}
+.form-upload-wrapper .icon {
+    width: 70%;
+    height: 70%;
+    opacity: .7;
+}
+
+.form-group {
+    position: relative;
+}
+.form-group .form-upload-trash-button {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+}
+.form-group .form-upload-trash-button .i-trash {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.project-form .form-group .form-upload-trash-button {
+    left: 165px;
+    bottom: 5px;
+}
+.project-form .form-group .form-upload-trash-button .i-trash {
+    width: 1.4em;
+    height: 1.4em;
+}
+
+.form-upload-wrapper:hover .form-upload-img {
+    opacity: .3;
+}
+.form-upload-wrapper:hover .i-edit {
+    position: absolute;
+    z-index: 1;
 }
