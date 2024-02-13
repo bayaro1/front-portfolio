@@ -60,3 +60,7 @@ export const DeskNavItemExpandable = forwardRef(({children, renderExpandMenu}, h
         </button>
     )
 });
+
+
+
+DeskNavItemExpandable.displayName = 'CustomDeskNavItemExpandable';

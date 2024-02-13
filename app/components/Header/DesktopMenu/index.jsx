@@ -29,3 +29,7 @@ export const DesktopMenu = forwardRef(({fetchProjects, projects}, headerRef) => 
         </nav>
     )
 });
+
+
+
+DesktopMenu.displayName = 'CustomDesktopMenu';

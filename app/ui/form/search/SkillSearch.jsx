@@ -110,3 +110,7 @@ export const SkillItem = ({skill}) => {
         </div>
     )
 }
+
+
+
+SkillSearch.displayName = 'CustomSkillSearch';
