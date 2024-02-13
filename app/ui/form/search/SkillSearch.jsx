@@ -12,7 +12,7 @@ import { defaultSkills } from "@/app/lib/defaultSkills";
 
 
 
-export const SkillSearch = forwardRef((props, headerRef) => {
+export const SkillSearch = forwardRef(({}, headerRef) => {
 
     const [isOpen, open, close] = useOpenState(false);
     const [q, setQ] = useState('');

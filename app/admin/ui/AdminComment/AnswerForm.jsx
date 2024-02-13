@@ -49,7 +49,7 @@ export const AnswerForm = ({comment, close, fetchComments}) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="admin-form">
-            <div className="admin-login-title">Répondre au commentaire de "{comment.fullName}" à propos de "{comment.project.title}"</div>
+            <div className="admin-login-title">Répondre au commentaire de &quot;{comment.fullName}&quot; à propos de &quot;{comment.project.title}&quot;</div>
 
             <TextField fieldName="fullName" control={control} error={errors.fullName?.message} maxLength={200}>
                 Nom
