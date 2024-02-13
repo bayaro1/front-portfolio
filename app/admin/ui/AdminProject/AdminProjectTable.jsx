@@ -47,7 +47,7 @@ const AdminProjectItem = ({project, update, deleteProject}) => {
         <tr>
             <td>{project.id}</td>
             <td>
-                <img width="90px" height="90px" style={{margin: '0 auto'}} src={project.screenDesktopPath ?? project.screenDesktopBase64} alt="Screenshot desktop" />
+                <img width="90px" height="90px" style={{margin: '0 auto'}} src={project.screenDesktopPath} alt="Screenshot desktop" />
             </td>
             <td>{project.title}</td>
             <td>{getMonthAndYear(project.startedAt)}</td>

@@ -27,6 +27,9 @@ export default function Page() {
         SiteConfig.API_URL + '/api/admin/project',
         SiteConfig.API_URL + '/api/admin/project',
         SiteConfig.API_URL + '/api/admin/project',
+        true,
+        {},
+        true,
         true
     );
     const {
@@ -42,12 +45,12 @@ export default function Page() {
         SiteConfig.API_URL + '/api/admin/skills',
         SiteConfig.API_URL + '/api/admin/skills',
         SiteConfig.API_URL + '/api/admin/skills',
-        false
+        true,
+        {limit: 1000},
+        true,
+        true
     );
 
-    useEffect(() => {
-        fetchSkills({limit: 1000});
-    }, []);
 
     return (
         <div className="admin-home">

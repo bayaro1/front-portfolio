@@ -20,7 +20,17 @@ const reducer = (items, action) => {
  * @param {boolean} initialFetch 
  * @returns 
  */
-export const useCRUD = (baseEntrypoint, createEntrypoint = null, updateEntrypoint = null, deleteEntrypoint = null, initialFetch = false) => {
+export const useCRUD = (
+        baseEntrypoint, 
+        createEntrypoint = null, 
+        updateEntrypoint = null, 
+        deleteEntrypoint = null, 
+        initialFetch = false, 
+        fetchAllParams = {}, 
+        onUpdateFetchAll = false, 
+        onCreateFetchAll = false
+    ) => {
+
     const [items, dispatch] = useReducer(reducer, []);
     const [error, setError] = useState(null);
     const [isLoading, setLoading] = useState(null);
@@ -28,11 +38,11 @@ export const useCRUD = (baseEntrypoint, createEntrypoint = null, updateEntrypoin
     /**
      * @param {string} params (paramètres GET) 
      */
-    const fetchAll = async (params = {}) => {
+    const fetchAll = async (params = null) => {
         setError(null);
         setLoading(true);
         try {
-            const hydraList = await apiPreparedFetch(baseEntrypoint, params, 'GET');
+            const hydraList = await apiPreparedFetch(baseEntrypoint, params ?? fetchAllParams, 'GET');
             dispatch({type: 'FETCH_ALL', payload: hydraList['hydra:member']});
         } catch(e) {
             setError(e);
@@ -48,6 +58,9 @@ export const useCRUD = (baseEntrypoint, createEntrypoint = null, updateEntrypoin
         } catch(e) {
             setError(e);
         }
+        if(onCreateFetchAll) {
+            fetchAll();
+        }
     };
 
     /**
@@ -60,6 +73,9 @@ export const useCRUD = (baseEntrypoint, createEntrypoint = null, updateEntrypoin
             dispatch({type: 'UPDATE', target: id, payload: updatedItem});
         } catch(e) {
             setError(e);
+        }
+        if(onUpdateFetchAll) {
+            fetchAll();
         }
     };
 
