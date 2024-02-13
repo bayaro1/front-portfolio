@@ -12,7 +12,7 @@ export const defaultSkills = [
         id: 'default_skill_2',
         ['name']: 'React',
         category: 'skill.cat_frameworks',
-        learnedAt: '2023-05-01T00:00:00+00:00',
+        learnedAt: '2023-01-01T00:00:00+00:00',
         logoPath: SiteConfig.API_URL + '/img/default_skills/react.png'
     },
     {
