@@ -1,4 +1,5 @@
-import { SiteConfig } from "@/app/lib/SiteConfig"
+'use client';
+
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString"
 import { Comments } from "./Comments"
 import { ShowImgSelector } from "./PicturesShow/ShowImgSelector"
@@ -51,8 +52,6 @@ export const ProjectShow = ({project}) => {
                 </div>
                
             </div>
-            
-            
         </div>
     )
 }

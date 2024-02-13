@@ -1,6 +1,12 @@
+import { apiFetch } from "@/app/lib/api"
 import { ProjectItem } from "./ProjectItem"
+import { SiteConfig } from "@/app/lib/SiteConfig"
 
-export const ProjectsList = ({projects, count}) => {
+export const  ProjectsList = async () => {
+    
+    const projectsHydra = await apiFetch(SiteConfig.API_URL + '/api/projects');
+    const count = projectsHydra['hydra:totalItems'];
+
     return (
         <>
             <div className="main-subtitle project-index-main-subtitle">
@@ -8,7 +14,7 @@ export const ProjectsList = ({projects, count}) => {
             </div>
             <div className="project-index">
                 {
-                    projects.map(project => (
+                    projectsHydra['hydra:member'].map(project => (
                         <ProjectItem key={project.id} project={project} />
                     ))
                 }

@@ -1,14 +1,9 @@
-'use client';
-
-import { SiteConfig } from "@/app/lib/SiteConfig";
-import { useFetch } from "@/app/lib/customHooks/fetch/useFetch";
 import { ProjectsListSkeleton } from "./ui/skeletons/ProjectsListSkeleton";
 import { ProjectsList } from "./ui/ProjectsList";
+import { Suspense } from "react";
 
 
 export default function Page() {
-
-    const [projects, count, isLoading, errors, reset] = useFetch(SiteConfig.API_URL + '/api/projects');
 
     return (
         <>
@@ -20,13 +15,9 @@ export default function Page() {
                 </div>
             </main>
             <div className="page">
-                {
-                    projects ? (
-                        <ProjectsList projects={projects} count={count} />
-                    ): (
-                        <ProjectsListSkeleton />
-                    )
-                }
+                <Suspense fallback={<ProjectsListSkeleton />}>
+                    <ProjectsList />
+                </Suspense>
             </div>
         </>
     );

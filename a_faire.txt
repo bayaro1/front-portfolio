@@ -1,9 +1,0 @@
-
-tenter d'utiliser les composants serveur :
-- voir si on peut servir en https en local
-- sinon voir si je met l'api sur http://localhost   si ça fonctionne
-- sinon essayer en prod directement 
-
-
-api
-ia-portfolio-f661150a7212.herokuapp.com
