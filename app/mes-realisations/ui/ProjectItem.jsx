@@ -1,7 +1,7 @@
 'use client';
 
-import { SiteConfig } from "@/app/lib/SiteConfig";
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
+import Image from "next/image";
 import Link from "next/link";
 
 
@@ -9,7 +9,7 @@ export const ProjectItem = ({project}) => {
     return (
         <div className="project-item">
             <Link href={'/mes-realisations/'+project.id}>
-                <img
+                <Image
                     className="project-item-img"
                     src={project.screenDesktopPath}
                     alt={'Capture d\'écran de ' + project.title}
