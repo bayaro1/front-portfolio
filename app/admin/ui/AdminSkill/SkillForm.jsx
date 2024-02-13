@@ -79,13 +79,13 @@ export const SkillForm = ({update, create, skill, close}) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="admin-form">
-            <div className="admin-login-title">Ajout d'une compétence</div>
+            <div className="admin-login-title">Ajout d&apos;une compétence</div>
 
             <TextField fieldName="name" control={control} error={errors.name?.message} maxLength={200}>
                 Nom de la compétence
             </TextField>
             <TextField fieldName="learnedAt" control={control} error={errors.learnedAt?.message} maxLength={200}>
-                Date d'acquisition (format : Y:m:d H:i:s)
+                Date d&apos;acquisition (format : Y:m:d H:i:s)
             </TextField>
 
             <div className="form-group">

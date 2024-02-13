@@ -100,7 +100,7 @@ export const ProjectForm = ({update, create, project, close}) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="admin-form project-form">
-            <div className="admin-login-title">Ajout d'une réalisation</div>
+            <div className="admin-login-title">Ajout d&apos;une réalisation</div>
 
             <TextField fieldName="title" control={control} error={errors.title?.message} maxLength={200}>
                 Titre

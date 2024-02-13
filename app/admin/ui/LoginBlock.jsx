@@ -79,7 +79,7 @@ export const LoginBlock = () => {
             {
                 user === null && (
                     <div className="admin-user-card">
-                        Chargement de l'utilisateur...
+                        Chargement de l&apos;utilisateur...
                     </div>
                 )
             }
@@ -91,7 +91,7 @@ export const LoginBlock = () => {
                             error && <div className="admin-main-error">{error.message}</div>
                         }
                         <div className="form-group">
-                            <div className="form-label" htmlFor="username">Nom d'utilisateur</div>
+                            <div className="form-label" htmlFor="username">Nom d&apos;utilisateur</div>
                             <input className="form-control" type="text" id="username" name="username" value={formData.username} onChange={handleChange} />
                         </div>
                         <div className="form-group">

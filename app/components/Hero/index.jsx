@@ -30,7 +30,7 @@ export const Hero = () => {
             <div className="hero-row">
                 <div className="hero-text">
                     <div className="hero-title-wrapper">
-                        <h1 className="hero-title">Besoin d'un développeur web ?</h1>
+                        <h1 className="hero-title">Besoin d&apos;un développeur web ?</h1>
                         <p className="hero-subtitle">Je suis Ibai Arotçarena, développeur Symfony / React. Je me suis formé en autodidacte depuis 2021.</p>
                     </div>
                     <div className="hero-cta-wrapper">

@@ -51,3 +51,5 @@ export const Modal = forwardRef(({children, additionalClass, isOpen, close = nul
 
 
 
+
+Modal.displayName = 'CustomModal';
