@@ -67,6 +67,7 @@ const AnswerItem = ({answer}) => {
                             <Image
                                 className="profile-img"
                                 src="/profile/me.jpg"
+                                alt="Photo Ibai"
                                 width={30}
                                 height={30}
                             />
