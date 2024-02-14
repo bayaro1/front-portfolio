@@ -5,7 +5,7 @@ import { SiteConfig } from "@/app/lib/SiteConfig"
 export const  ProjectsList = async () => {
     
     const projectsHydra = await apiFetch(SiteConfig.API_URL + '/api/projects', {
-        cache: 'no-store'
+        next: {revalidate: 60}
     });
     const count = projectsHydra['hydra:totalItems'];
 

@@ -7,7 +7,7 @@ import { SiteConfig } from '@/app/lib/SiteConfig';
 export default async function Page({params: {projectId}}) {
 
     const project = await apiFetch(SiteConfig.API_URL + '/api/projects/'+projectId, {
-        cache: 'no-store'
+        next: {revalidate: 60}
     });
 
     return (
