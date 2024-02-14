@@ -1,3 +1,4 @@
+import { LeaveIcon } from "@/app/ui/icons/LeaveIcon"
 import Image from "next/image"
 
 export const CvMenu = () => {
@@ -13,7 +14,10 @@ export const CvMenu = () => {
                         height={150}
                     />
                 </a>
-                <a className="base-link" target="_blank" href="/profile/cv.pdf">Voir le CV</a>
+                <a href="/profile/cv.pdf" target="_blank" className="external-link i-text">
+                    <LeaveIcon />
+                    <span>Voir le CV</span>
+                </a>
             </div>
         </div>
     )
