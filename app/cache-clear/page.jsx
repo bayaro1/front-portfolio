@@ -11,7 +11,6 @@ export default function Page() {
                 <li>revalidateTag(&apos;project_index&apos;)</li>
                 <li>revalidateTag(&apos;project_show&apos;)</li>
             </ul>
-            <div style={{margin: '30px 0'}}></div>
         </div>
     )
 }
