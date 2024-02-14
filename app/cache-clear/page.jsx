@@ -9,10 +9,10 @@ export default function Page() {
             <div style={{width: '600px', maxWidth: '80vw', maxHeight: '80vh', overflow: 'auto'}}>
                 <h3>Les actions suivantes ont eu lieu :</h3>
                 <ul>
-                    <li>revalidatePath('/mes-realisations', 'page')</li>
+                    <li>revalidatePath(&apos;/mes-realisations&apos;, &apos;page&apos;)</li>
                 </ul>
             </div>
-            <Link href="/">Retour à l'accueil</Link>
+            <Link href="/">Retour à l&apos;accueil</Link>
         </div>
     )
 }
