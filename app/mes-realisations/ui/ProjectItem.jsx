@@ -11,6 +11,8 @@ export const ProjectItem = ({project}) => {
             <Link href={'/mes-realisations/'+project.id}>
                 <Image
                     className="project-item-img"
+                    width={300}
+                    height={300}
                     src={project.screenDesktopPath}
                     alt={'Capture d\'écran de ' + project.title}
                 />
