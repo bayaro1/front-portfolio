@@ -16,7 +16,6 @@ export default function Page() {
 
     const {
         items: projects, 
-        fetchAll: fetchProjects,
         isLoading: projectLoading, 
         error: projectError, 
         deleteItem: deleteProject, 
@@ -34,7 +33,6 @@ export default function Page() {
     );
     const {
         items: skills, 
-        fetchAll: fetchSkills,
         isLoading: skillLoading, 
         error: skillError, 
         deleteItem: deleteSkill, 

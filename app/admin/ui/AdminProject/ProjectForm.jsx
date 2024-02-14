@@ -8,7 +8,6 @@ import * as yup from "yup"
 import { PictureUploadField } from "../Form/PictureUploadField";
 import { apiPreparedFetch } from "@/app/lib/api";
 import { SiteConfig } from "@/app/lib/SiteConfig";
-import { revalidatePath } from "next/cache";
 
 
 
@@ -64,7 +63,6 @@ export const ProjectForm = ({update, create, project, close}) => {
             } else if(create) {
                 await create(sendData);
             }
-            revalidatePath('/mes-realisations', 'page');
         }
         setLoading(false);
         close();

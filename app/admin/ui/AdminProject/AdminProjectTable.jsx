@@ -2,7 +2,6 @@ import { useOpenState } from "@/app/lib/customHooks/state/useOpenState";
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
 import { Modal } from "@/app/ui/container/Modal";
 import { ProjectForm } from "./ProjectForm";
-import { SiteConfig } from "@/app/lib/SiteConfig";
 
 export const AdminProjectTable = ({projects, update, deleteProject}) => {
     return (
