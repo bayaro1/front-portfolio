@@ -30,35 +30,37 @@ export const TopFooter = async () => {
     }
 
     return (
-        <div className="footer-block main">
-            <div className="footer-block-part">
-                <h3 className="footer-block-part-title">Frameworks</h3>
-                <div className="footer-block-part-list">
-                    {
-                        frameworkSkills.map(skill => (
-                            <SkillItem key={skill.id} skill={skill} />
-                        ))
-                    }
+        <div className="top-footer-wrapper">
+            <div className="top-footer">
+                <div className="footer-block-part">
+                    <h3 className="footer-block-part-title">Frameworks</h3>
+                    <div className="footer-block-part-list">
+                        {
+                            frameworkSkills.map(skill => (
+                                <SkillItem key={skill.id} skill={skill} />
+                            ))
+                        }
+                    </div>
                 </div>
-            </div>
-            <div className="footer-block-part">
-                <h3 className="footer-block-part-title">Langages</h3>
-                <div className="footer-block-part-list">
-                    {
-                        languageSkills.map(skill => (
-                            <SkillItem key={skill.id} skill={skill} />
-                        ))
-                    }
+                <div className="footer-block-part">
+                    <h3 className="footer-block-part-title">Langages</h3>
+                    <div className="footer-block-part-list">
+                        {
+                            languageSkills.map(skill => (
+                                <SkillItem key={skill.id} skill={skill} />
+                            ))
+                        }
+                    </div>
                 </div>
-            </div>
-            <div className="footer-block-part">
-                <h3 className="footer-block-part-title">Autres outils</h3>
-                <div className="footer-block-part-list">
-                    {
-                        utilSkills.map(skill => (
-                            <SkillItem key={skill.id} skill={skill} />
-                        ))
-                    }
+                <div className="footer-block-part">
+                    <h3 className="footer-block-part-title">Autres outils</h3>
+                    <div className="footer-block-part-list">
+                        {
+                            utilSkills.map(skill => (
+                                <SkillItem key={skill.id} skill={skill} />
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
         </div>

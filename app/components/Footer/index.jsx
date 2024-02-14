@@ -6,11 +6,14 @@ import { TopFooterSkeleton } from "./TopFooter/TopFooterSkeleton";
 
 export const Footer = () => {
     return (
-        <footer className="footer main-footer">
+        <footer className="footer">
             <Suspense fallback={<TopFooterSkeleton />}>
                 <TopFooter />
             </Suspense>
             <ProfileFooter />
+            <div className="bottom-footer">
+                Ce site a été réalisé avec Next.js et Api Platform
+            </div>
         </footer>
     )
 }

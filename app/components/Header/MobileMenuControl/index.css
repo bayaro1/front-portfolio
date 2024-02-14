@@ -181,6 +181,7 @@
 .mobile-menu-nav .mobile-menu-project-item-body {
     align-items: flex-start;
     text-align: left;
+    padding-top: 5px;
 }
 
 

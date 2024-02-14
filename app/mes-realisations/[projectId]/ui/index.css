@@ -2,8 +2,8 @@
     display: none;
 }
 .carousel-wrapper {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 
@@ -52,6 +52,9 @@
     .project-show-title {
         font-size: 2.5em;
     }
+    .project-show-text.big {
+        font-size: 1em;
+    }
 }
 
 @media only screen and (min-width: 780px) {
@@ -70,8 +73,6 @@
     .project-show {
         display: flex;
         gap: 20px;
-        max-width: var(--page-container-width);
-        margin: 0 auto;
     }
     .project-show-right-col {
         width: 40%;

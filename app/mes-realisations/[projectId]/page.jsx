@@ -1,4 +1,5 @@
 
+import Loading from './loading';
 import './ui/index.css';
 import { ProjectShow } from './ui/ProjectShow';
 import { apiFetch } from '@/app/lib/api';
@@ -13,11 +14,7 @@ export default async function Page({params: {projectId}}) {
     return (
         <>
             <div className="hero-bis">
-                <div className="hero-bis-img">
-                    <div className="hero-text-bis">
-                        <h1 className="hero-title-bis hero-bis-title">{project.title}</h1>
-                    </div>
-                </div>
+                <div className="hero-bis-bg"></div>
             </div>
             <div className="page">
                 {

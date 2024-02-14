@@ -2,16 +2,19 @@ import { Hero } from "@/app/components/Hero";
 import '@/app/mes-realisations/ui/index.css';
 import '@/app/mes-realisations/[projectId]/ui/index.css';
 import { Suspense } from "react";
-import { LastProject, LastProjectSkeleton } from "./components/LastProject";
+import { LastProject } from "./components/LastProject";
+import { ProjectShowSkeleton } from "./mes-realisations/[projectId]/ui/skeletons/ProjectShowSkeleton";
 
 export default function Page() {
 
   return (
     <>
       <Hero />
-      <Suspense fallback={<LastProjectSkeleton />}>
-        <LastProject />
-      </Suspense>
+      <div className="page">
+        <Suspense fallback={<ProjectShowSkeleton />}>
+          <LastProject />
+        </Suspense>
+      </div>
     </>
   )
 }

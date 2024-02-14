@@ -1,7 +1,6 @@
 import { SiteConfig } from "../lib/SiteConfig";
 import { apiFetch } from "../lib/api";
 import { ProjectShow } from "../mes-realisations/[projectId]/ui/ProjectShow";
-import { ProjectShowSkeleton } from "../mes-realisations/[projectId]/ui/skeletons/ProjectShowSkeleton";
 
 export const LastProject = async () => {
 
@@ -10,17 +9,8 @@ export const LastProject = async () => {
       });
 
     return (
-        <section className="homepage-highlight">
-            <ProjectShow project={lastProject} />
-        </section>
+        <ProjectShow project={lastProject} />
     )
 }
 
 
-export const LastProjectSkeleton = () => {
-    return (
-        <section className="homepage-highlight">
-            <ProjectShowSkeleton />
-        </section>
-    )
-}

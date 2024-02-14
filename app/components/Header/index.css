@@ -88,7 +88,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 45px;
+        gap: 70px;
     }
     .desktop-menu-nav-item {
         display: flex;
@@ -105,7 +105,7 @@
         height: 1.6em;
     }
     .desktop-menu-nav-item .search-wrapper .search-input {
-        width: 400px;
+        width: 450px;
     }
     .desktop-menu-nav-item .search-wrapper .search-input::placeholder {
         font-weight: 400;

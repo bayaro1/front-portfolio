@@ -36,9 +36,7 @@ export const MobileMenu = ({fetchProjects, projects, close}) => {
                     Mon CV
                 </NavitemExpandable>
             </nav>
-            <footer className="footer mobile-menu-footer">
-                <ProfileFooter />
-            </footer>
+            <ProfileFooter />
         </>
     )
 }

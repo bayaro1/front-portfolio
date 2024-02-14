@@ -1,72 +1,71 @@
 .footer {
-    margin-top: auto;
-    padding: 20px;
-    background-color: rgb(247, 247, 247);
+    font-size: .9em;
 }
+.profile-footer-wrapper {
+    background-color: rgb(245, 245, 245);
+    padding: 25px 20px;
+}
+
 .footer-item {
     margin: 15px 0;
 }
 
-.footer-block-part {
-    padding: 20px 0;
-    border-bottom: solid 1px rgb(225, 225, 225);
+.top-footer-wrapper {
+    padding: 35px 20px;
+    border-top: solid 3px rgb(225, 225, 225);
 }
-.footer-block-part:last-child {
-    border-bottom: none;
-}
-
-.main-footer .footer-block:last-child {
-    background-color: #FFF;
-    border-radius: 20px;
-    padding: 10px 20px;
-    max-width: 500px;
-    margin: 0 auto;
-    font-size: .9em;
-}
-.main-footer .footer-block:last-child a:hover {
-    text-decoration: underline;
-}
-
-.footer-block.main {
-    margin-bottom: 20px;
-    padding: 0 10px;
-    max-width: 500px;
-    margin: 0 auto;
+.top-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 .footer-block-part-title {
-    margin-bottom: 10px;
     font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 1050px) {
-    .footer {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .footer-block.main {
-        max-width: 1200px;
-        margin: 0 auto 40px;
-        padding-left: 40px;
-        padding-right: 40px;
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .footer-block-part {
-        border-bottom: none;
-    }
+.bottom-footer {
+    background-color: rgb(245, 245, 245);
+    font-weight: .95em;
+    padding: 30px 20px;
 }
 
-@media only screen and (min-width: 1400px) {
-    .main-footer .footer-block:last-child {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 1250px;
-        max-width: none;
+@media only screen and (min-width: 650px) {
+    .profile-footer-wrapper, .top-footer-wrapper {
         padding-left: 30px;
         padding-right: 30px;
+    }
+    .profile-footer, .top-footer {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+    }
+    .bottom-footer {
+        text-align: center;
+    }
+}
+
+
+@media only screen and (min-width: 950px) {
+    .top-footer {
+        max-width: 1500px;
+        flex-direction: row;
+        gap: 50px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .profile-footer-wrapper {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .profile-footer {
+        max-width: 1200px;
+        display: flex;
+        gap: 50px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 }

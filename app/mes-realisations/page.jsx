@@ -6,13 +6,9 @@ export default function Page() {
 
     return (
         <>
-            <main className="hero-bis">
-                <div className="hero-bis-img">
-                    <div className="hero-text-bis">
-                        <h1 className="hero-title-bis">Mes réalisations</h1>
-                    </div>
-                </div>
-            </main>
+            <div className="hero-bis">
+                <div className="hero-bis-bg"></div>
+            </div>
             <div className="page">
                 <Suspense fallback={<ProjectsListSkeleton />}>
                     <ProjectsList />

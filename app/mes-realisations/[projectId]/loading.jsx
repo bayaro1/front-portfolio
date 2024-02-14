@@ -3,14 +3,13 @@ import { ProjectShowSkeleton } from "./ui/skeletons/ProjectShowSkeleton";
 export default function Loading() {
     return (
         <>
-            <main className="hero-bis">
-                <div className="hero-bis-img">
-                    <div className="hero-text-bis">
-                        <h1 className="hero-title-bis hero-bis-title">Mes réalisations</h1>
-                    </div>
-                </div>
-            </main>
+            <div className="hero-bis">
+                <div className="hero-bis-bg"></div>
+            </div>
             <div className="page">
+                <div style={{margin: '40px 0 40px', width: '400px', maxWidth: '80vw'}}>
+                    <div className="skeleton-line"></div>
+                </div>
                 <ProjectShowSkeleton />
             </div>
         </>

@@ -1,8 +1,6 @@
 'use client';
 
-import { SiteConfig } from "@/app/lib/SiteConfig";
 import { getMonthAndYear } from "@/app/lib/helpers/dateToString";
-import { Loader } from "@/app/ui/icons/Loader";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -47,7 +45,8 @@ export const ProjectsMenu = ({projects, fetchProjects, closeMobileMenu}) => {
                             <div 
                                 className="mobile-menu-project-img"
                                 style={{background: 'url('+project.screenMobilePath+') center center / cover no-repeat'}}
-                            ></div>
+                            >
+                            </div>
                         </Link>
                         <div className="mobile-menu-project-item-body">
                             <div className="mobile-menu-project-title">
