@@ -4,7 +4,7 @@
 .search-input {
     height: 40px;
     width: 100%;
-    padding-left: 35px;
+    padding-left: 42px;
     padding-right: 35px;
     border: var(--border-input);
     border-radius: 6px;
@@ -36,7 +36,7 @@
 .search-wrapper .loader {
     opacity: .7;
 }
-.search-wrapper .close-button, .search-wrapper .loader, .search-wrapper .i-search {
+.search-wrapper .close-button, .search-wrapper .loader {
     position: absolute;
     top: calc(50% - .5em);
 }
@@ -47,6 +47,10 @@
 .search-wrapper .i-search {
     left: 10px;
     right: auto;
+    width: 1.4em;
+    height: 1.4em;
+    position: absolute;
+    top: calc(50% - .7em);
 }
 
 .skill-list {

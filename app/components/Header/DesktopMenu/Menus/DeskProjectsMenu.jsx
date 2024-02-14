@@ -54,7 +54,7 @@ export const DeskProjectsMenu = ({fetchProjects, projects, closeExpandMenu}) => 
                                 </div>
                                 <div>{project.shortDescription}</div>
                                 <div className="mobile-menu-project-url">
-                                    <Link onClick={closeExpandMenu} className="base-link" href={'/mes-realisations/'+project.id}>
+                                    <Link onClick={closeExpandMenu} className="see-more-button" href={'/mes-realisations/'+project.id}>
                                         Voir plus
                                     </Link>
                                 </div>

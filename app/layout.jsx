@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={montserrat_alternates.className}>
           <Header />
-            {children}
+          {children}
           <Footer />
       </body>
     </html>

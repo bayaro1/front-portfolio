@@ -5,7 +5,7 @@ import { SkillSearch } from "@/app/ui/form/search/SkillSearch"
 import { NavitemExpandable } from "@/app/ui/nav/NavItemExpandable"
 import { ProjectsMenu } from "@/app/components/Header/MobileMenuControl/ProjectsMenu"
 import { CvMenu } from "@/app/components/Header/MobileMenuControl/CvMenu"
-import { Footer, ProfileFooter } from "@/app/components/Footer";
+import { ProfileFooter } from "@/app/components/Footer/ProfileFooter";
 import { useRef } from "react";
 
 export const MobileMenu = ({fetchProjects, projects, close}) => {

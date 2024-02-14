@@ -11,9 +11,6 @@ export const LastProject = async () => {
 
     return (
         <section className="homepage-highlight">
-            <h2 className="homepage-highlight-title">
-                {lastProject.title}
-            </h2>
             <ProjectShow project={lastProject} />
         </section>
     )
@@ -23,9 +20,6 @@ export const LastProject = async () => {
 export const LastProjectSkeleton = () => {
     return (
         <section className="homepage-highlight">
-            <h2 className="homepage-highlight-title">
-                <div style={{margin: '10px 0', width: '400px'}} className="skeleton-line"></div>
-            </h2>
             <ProjectShowSkeleton />
         </section>
     )

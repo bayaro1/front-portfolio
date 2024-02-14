@@ -5,6 +5,7 @@ import { Comments } from "./Comments"
 import { ShowImgSelector } from "./PicturesShow/ShowImgSelector"
 import { ShowCarousel } from "./PicturesShow/ShowCarousel"
 import './PicturesShow/productShowImg.css';
+import { LeaveIcon } from "@/app/ui/icons/LeaveIcon";
 
 export const ProjectShow = ({project}) => {
 
@@ -24,33 +25,31 @@ export const ProjectShow = ({project}) => {
     ];
 
     return (
-        <div className="project-item project-show-item">
-            <div className="project-item-header">
-                <div className="chip project-item-date-chip">
+        <div className="project-show">
+            <div className="project-show-left-col">
+                <ShowCarousel pictures={pictures} />
+                <ShowImgSelector pictures={pictures} />
+            </div>
+            <div className="project-show-right-col">
+                <div className="project-show-title">{project.title}</div>
+                <div className="chip">
                     {getMonthAndYear(project.startedAt)} - {getMonthAndYear(project.endAt)}
                 </div>
-                
-            </div>
-            <ShowCarousel pictures={pictures} />
-            <div className="show-row">
-                <ShowImgSelector pictures={pictures} />
-                <div className="project-item-body">
-                    <p className="project-item-text project-item-short-description">
-                        {project.shortDescription}
-                    </p>
-                    <div className="project-item-text">
-                        <a href={project.url} target="_blank" className="base-link">
-                            {project.url}
-                        </a>
-                    </div>
-                    <p className="project-item-text">
-                        {project.longDescription}
-                    </p>
-                    {
-                        <Comments projectIri={project['@id']} />
-                    }
+                <div className="project-show-text big">
+                    {project.shortDescription}
                 </div>
-               
+                <div className="project-show-text html-content">
+                    {project.longDescription}
+                </div>
+                <div className="external-link-wrapper">
+                    <a href={project.url} target="_blank" className="external-link i-text">
+                        <LeaveIcon />
+                        <span>Voir le site</span>
+                    </a>
+                </div>
+                {
+                    <Comments projectIri={project['@id']} />
+                }
             </div>
         </div>
     )

@@ -47,8 +47,6 @@ export const ProjectsMenu = ({projects, fetchProjects, closeMobileMenu}) => {
                             <div 
                                 className="mobile-menu-project-img"
                                 style={{background: 'url('+project.screenMobilePath+') center center / cover no-repeat'}}
-                                // src={project.screenMobilePath}
-                                // alt={'Capture d\'écran du site ' + project.title}
                             ></div>
                         </Link>
                         <div className="mobile-menu-project-item-body">
@@ -62,7 +60,7 @@ export const ProjectsMenu = ({projects, fetchProjects, closeMobileMenu}) => {
                             </div>
                             <div>{project.shortDescription}</div>
                             <div className="mobile-menu-project-url">
-                                <Link onClick={closeMobileMenu} className="base-link" href={'/mes-realisations/'+project.id}>
+                                <Link onClick={closeMobileMenu} className="see-more-button" href={'/mes-realisations/'+project.id}>
                                     Voir plus
                                 </Link>
                             </div>

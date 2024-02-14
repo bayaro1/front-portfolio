@@ -15,6 +15,7 @@ export const Modal = forwardRef(({children, additionalClass, isOpen, close = nul
     }, [isOpen]);
 
     const containerRef = useRef();
+    const closerRef = useRef();
 
     const handleClose = () => {
         if(!close) {
@@ -28,6 +29,10 @@ export const Modal = forwardRef(({children, additionalClass, isOpen, close = nul
         containerRef.current.addEventListener('animationend', () => {
             close();
         });
+        closerRef.current.classList.add('close');
+        closerRef.current.addEventListener('animationend', () => {
+            close();
+        });
     };
 
     const handleStopPropagation = e => {
@@ -39,7 +44,14 @@ export const Modal = forwardRef(({children, additionalClass, isOpen, close = nul
                 <div ref={containerRef} className={'modal-container' + (additionalClass ? ' '+additionalClass+'-container': '')} onClick={handleClose}>
                     <div ref={modalRef} className={'modal' + (additionalClass ? ' '+additionalClass: '')} onClick={handleStopPropagation}>
                         {
-                            close !== null && <CloseButton additionalClass="modal-closer" onClick={handleClose} />
+                            close !== null && createPortal(
+                                (
+                                    <div ref={closerRef} className="closer-wrapper">
+                                        <CloseButton additionalClass="modal-closer" onClick={handleClose} />
+                                    </div>
+                                ),
+                                document.body
+                            )
                         }
                         {children}
                     </div>

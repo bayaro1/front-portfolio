@@ -106,7 +106,6 @@
     }
     .desktop-menu-nav-item .search-wrapper .search-input {
         width: 400px;
-        padding-left: 42px;
     }
     .desktop-menu-nav-item .search-wrapper .search-input::placeholder {
         font-weight: 400;

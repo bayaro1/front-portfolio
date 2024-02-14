@@ -12,13 +12,13 @@ export default async function Page({params: {projectId}}) {
 
     return (
         <>
-            <main className="hero-bis">
+            <div className="hero-bis">
                 <div className="hero-bis-img">
                     <div className="hero-text-bis">
                         <h1 className="hero-title-bis hero-bis-title">{project.title}</h1>
                     </div>
                 </div>
-            </main>
+            </div>
             <div className="page">
                 {
                     <ProjectShow project={project} />
