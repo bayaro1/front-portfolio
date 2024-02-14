@@ -1,18 +1,17 @@
-import { revalidatePath } from "next/cache";
-import Link from "next/link";
+import { revalidateTag } from "next/cache"
 
 export default function Page() {
-    revalidatePath('/mes-realisations', 'page');
+    revalidateTag('project_index');
+    revalidateTag('project_show');
 
     return (
-        <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{width: '600px', maxWidth: '80vw', maxHeight: '80vh', overflow: 'auto'}}>
-                <h3>Les actions suivantes ont eu lieu :</h3>
-                <ul>
-                    <li>revalidatePath(&apos;/mes-realisations&apos;, &apos;page&apos;)</li>
-                </ul>
-            </div>
-            <Link href="/">Retour à l&apos;accueil</Link>
+        <div style={{margin: '40px'}}>
+            <h3>Les actions suivantes ont eu lieu :</h3>
+            <ul>
+                <li>revalidateTag(&apos;project_index&apos;)</li>
+                <li>revalidateTag(&apos;project_show&apos;)</li>
+            </ul>
+            <div style={{margin: '30px 0'}}></div>
         </div>
     )
 }
