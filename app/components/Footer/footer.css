@@ -5,6 +5,9 @@
     background-color: rgb(245, 245, 245);
     padding: 25px 20px;
 }
+.mobile-menu .profile-footer-wrapper {
+    margin-top: auto;
+}
 
 .footer-item {
     margin: 15px 0;

@@ -191,3 +191,10 @@
         max-width: 500px;
     }
 }
+
+
+@media only screen and (min-width: 1050px) {
+    .mobile-menu-container, .mobile-menu, .closer-wrapper {
+        display: none;
+    }
+}
