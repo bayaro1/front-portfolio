@@ -4,7 +4,7 @@ import './footer.css';
 import { ProfileFooter } from "./ProfileFooter";
 import { TopFooterSkeleton } from "./TopFooter/TopFooterSkeleton";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
-import Error from "@/app/ui/error/error";
+import Error from "@/app/ui/error/Error";
 
 export const Footer = () => {
     return (
