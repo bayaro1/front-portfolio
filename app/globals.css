@@ -139,10 +139,9 @@ input {
     height: 1px;
     background-color: rgb(100, 100, 100);
 }
-
 .page {
     max-width: var(--page-container-width);
-    margin: 20px auto 80px;
+    margin: 20px auto 130px;
     padding: 0 20px;
     min-height: 65vh;
 }
