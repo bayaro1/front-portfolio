@@ -6,7 +6,7 @@ import { apiFetch } from "../../../lib/api";
 export const TopFooter = async () => {
 
     const skillsHydra = await apiFetch(SiteConfig.API_URL + '/api/skills?limit=1000', {
-        next: {revalidation: 60}
+        next: {revalidate: 3600}
     });
 
     let frameworkSkills = [];

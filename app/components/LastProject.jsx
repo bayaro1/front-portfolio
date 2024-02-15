@@ -5,7 +5,7 @@ import { ProjectShow } from "../mes-realisations/[projectId]/ui/ProjectShow";
 export const LastProject = async () => {
 
     const lastProject = await apiFetch(SiteConfig.API_URL + '/api/project/last', {
-        next: {revalidate: 60}
+        next: {revalidate: 3600}
       });
 
     return (
