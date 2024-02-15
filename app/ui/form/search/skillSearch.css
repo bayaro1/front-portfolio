@@ -2,7 +2,7 @@
     position: relative;
 }
 .search-input {
-    height: 40px;
+    height: 45px;
     width: 100%;
     padding-left: 42px;
     padding-right: 35px;
@@ -10,11 +10,8 @@
     border-radius: 6px;
     font-weight: 400;
 }
-.mobile-menu-nav .search-input {
-    font-size: .9em;
-}
 .search-input::placeholder {
-    font-size: .9em;
+    font-size: 1em;
     font-weight: 200;
 }
 .search-input.open {
@@ -29,16 +26,16 @@
     display: none;
 }
 
-.search-wrapper .i-close, .search-wrapper .loader, .search-wrapper .i-search {
-    width: 1em;
-    height: 1em;
+.search-wrapper .i-close, .search-wrapper .loader {
+    width: 1.4em;
+    height: 1.4em;
 }
 .search-wrapper .loader {
     opacity: .7;
 }
 .search-wrapper .close-button, .search-wrapper .loader {
     position: absolute;
-    top: calc(50% - .5em);
+    top: calc(50% - .7em);
 }
 .search-wrapper .close-button, .search-wrapper .loader {
     right: 10px;
@@ -47,10 +44,10 @@
 .search-wrapper .i-search {
     left: 10px;
     right: auto;
-    width: 1.4em;
-    height: 1.4em;
+    width: 1.7em;
+    height: 1.7em;
     position: absolute;
-    top: calc(50% - .7em);
+    top: calc(50% - .85em);
 }
 
 .skill-list {
@@ -92,4 +89,22 @@
     .skill-list-item-title {
         font-size: 1.2em;
     }
+}
+
+
+
+.mobile-menu-nav .search-input {
+    height: 55px;
+    padding-left: 44px;
+    font-size: 1.1em;
+}
+.mobile-menu-nav .search-input::placeholder {
+    font-size: .9em;
+}
+.mobile-menu-nav .search-wrapper .i-search {
+    left: 3px;
+    width: 2em;
+    height: 2em;
+    top: calc(50% - 1em);
+    opacity: .9;
 }

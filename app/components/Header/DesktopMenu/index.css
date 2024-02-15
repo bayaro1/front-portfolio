@@ -17,6 +17,10 @@
     animation: appearsWithTransform forwards .5s .1s;
 }
 
+.desktop-menu-nav-item.expandable {
+    font-size: 1.1em;
+}
+
 @keyframes appears {
     from {
         opacity: 0;
