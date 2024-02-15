@@ -1,8 +1,3 @@
-.admin-page {
-    padding: 0 30px;
-    margin: 20px 0 100px;
-}
-
 .hero-title-bis.admin-hero-title-bis {
     padding: 15px 30px;
     max-width: none;
@@ -10,9 +5,14 @@
     text-align: center;
 }
 
-.admin-title {
+.admin-main-title {
     font-weight: 600;
-    font-size: 1.7em;
+    font-size: 3em;
+    text-align: center;
+    margin-top: -10px;
+}
+.admin-page {
+    margin-bottom: 150px;
 }
 
 .admin-home-block {

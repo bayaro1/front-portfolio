@@ -38,8 +38,7 @@ export const ProjectShow = ({project}) => {
                 <div className="project-show-text big">
                     {project.shortDescription}
                 </div>
-                <div className="project-show-text html-content">
-                    {project.longDescription}
+                <div className="project-show-text html-text" dangerouslySetInnerHTML={{__html: project.longDescription}}>
                 </div>
                 <div className="external-link-wrapper">
                     <a href={project.url} target="_blank" className="external-link i-text">

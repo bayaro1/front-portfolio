@@ -1,5 +1,4 @@
 'use client';
-import { useEffect, useState } from "react";
 import { SiteConfig } from "../lib/SiteConfig"
 import { Loader } from "../ui/icons/Loader";
 import { useCRUD } from "./lib/useCRUD";

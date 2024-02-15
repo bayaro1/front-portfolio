@@ -112,8 +112,9 @@ input {
 }
 
 .main-subtitle {
-    font-weight: 600;
-    margin: 20px 0;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin: 25px 0;
 }
 
 .base-link {
@@ -143,6 +144,7 @@ input {
     max-width: var(--page-container-width);
     margin: 20px auto 80px;
     padding: 0 20px;
+    min-height: 65vh;
 }
 .header-fixed + .hero-bis, .header-fixed.force-open + .hero-bis {
     margin-top: 70px;
@@ -167,6 +169,23 @@ input {
     background: linear-gradient(to bottom, var(--color-secondary-dark), var(--color-base) 90%, var(--color-secondary-dark));
 }
 
+.html-text a {
+    text-decoration: underline;
+    font-weight: 600;
+}
+.html-text ul {
+    padding-left: 20px;
+}
+.html-text li {
+    list-style-type: disc;
+}
+.html-text p {
+    margin: 10px 0;
+}
+
+.ugc-text {
+    white-space: pre-wrap;
+}
 
 
 @media only screen and (min-width: 650px) {
@@ -271,4 +290,16 @@ input {
 
 .card-absolute-button-target .card-absolute-button-wrapper .card-absolute-button:hover {
     background-color: rgb(54, 25, 100, .7);
+}
+
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.breadcrumb-link {
+    font-weight: 600;
 }

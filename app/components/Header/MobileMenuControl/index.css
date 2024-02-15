@@ -83,9 +83,9 @@
     align-items: center;
     justify-content: center;
     border-bottom: solid 1px rgb(220, 220, 220);
-    z-index: 1;
     flex: none;
     position: sticky;
+    z-index: 1;
     top: 0;
     background-color: #FFF;
 }

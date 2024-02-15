@@ -31,13 +31,6 @@
     font-size: .75em;
 }
 
-.project-index, .project-index-main-subtitle  {
-    max-width: var(--page-container-width);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px;
-}
-
 
 
 @media only screen and (min-width: 700px) {

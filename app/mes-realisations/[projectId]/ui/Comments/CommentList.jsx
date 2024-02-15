@@ -38,7 +38,7 @@ const CommentItem = ({comment}) => {
                 }
                 <div className="chip">{getDateTimeString(comment.createdAt)}</div>
             </div>
-            <div className="comment-item-body">{comment.content}</div>
+            <div className="comment-item-body ugc-text">{comment.content}</div>
             {
                 comment.answers.length > 0 && (
                     <div className="comment-item-answers-wrapper">
@@ -82,7 +82,7 @@ const AnswerItem = ({answer}) => {
                 }
                 <div className="chip">{getDateTimeString(answer.createdAt)}</div>
             </div>
-            <div className="comment-item-body">{answer.content}</div>
+            <div className="comment-item-body ugc-text">{answer.content}</div>
         </div>
     )
 }

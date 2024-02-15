@@ -1,5 +1,5 @@
 
-import Loading from './loading';
+import Link from 'next/link';
 import './ui/index.css';
 import { ProjectShow } from './ui/ProjectShow';
 import { apiFetch } from '@/app/lib/api';
@@ -17,6 +17,13 @@ export default async function Page({params: {projectId}}) {
                 <div className="hero-bis-bg"></div>
             </div>
             <div className="page">
+                <div className="breadcrumb">
+                    <Link href="/" className="breadcrumb-link breadcrumb-link-home">Accueil</Link>
+                    <span className="breadcrumb-separator">{'>'}</span>
+                    <Link href="/mes-realisations" className="breadcrumb-link">Mes réalisations</Link>
+                    <span className="breadcrumb-separator">{'>'}</span>
+                    <span className="breadcrumb-item">{project.title}</span>
+                </div>
                 {
                     <ProjectShow project={project} />
                 }

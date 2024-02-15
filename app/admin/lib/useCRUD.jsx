@@ -55,11 +55,11 @@ export const useCRUD = (
         try {
             const createdItem = await apiPreparedFetch(createEntrypoint ?? baseEntrypoint, item, 'POST');
             dispatch({type: 'CREATE', payload: createdItem});
+            if(onCreateFetchAll) {
+                fetchAll();
+            }
         } catch(e) {
             setError(e);
-        }
-        if(onCreateFetchAll) {
-            fetchAll();
         }
     };
 
@@ -71,11 +71,11 @@ export const useCRUD = (
         try {
             const updatedItem = await apiPreparedFetch((updateEntrypoint ?? baseEntrypoint) + '/' + id, item, 'PATCH');
             dispatch({type: 'UPDATE', target: id, payload: updatedItem});
+            if(onUpdateFetchAll) {
+                fetchAll();
+            }
         } catch(e) {
             setError(e);
-        }
-        if(onUpdateFetchAll) {
-            fetchAll();
         }
     };
 

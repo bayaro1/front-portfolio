@@ -55,6 +55,7 @@
     font-size: .7em;
     top: 0;
     right: 0;
+    margin-left: 10px;
 }
 .comment-item-title {
     color: var(--color-base);
@@ -62,4 +63,11 @@
 }
 .comment-item-body {
     margin-top: 7px;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .comment-form {
+        padding: 18px 23px;
+    }
 }

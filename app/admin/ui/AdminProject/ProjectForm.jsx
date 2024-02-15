@@ -40,7 +40,7 @@ const defaultProject = {
 
 export const ProjectForm = ({update, create, project, close}) => {
 
-    const { register, handleSubmit, control, formState: { errors } } = useForm({
+    const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
         defaultValues: project ?? defaultProject,
         mode: 'onTouched',
         resolver: yupResolver(schema)
@@ -86,6 +86,7 @@ export const ProjectForm = ({update, create, project, close}) => {
     const fetchFullProject = async () => {
         try {
             const fullProject = await apiPreparedFetch(SiteConfig.API_URL +'/api/admin/project/' + project.id);
+            setValue('longDescription', fullProject.longDescription);
             setFullProject(fullProject);
         } catch(e) {
             console.error('Erreur dans le fetch du fullProject');
