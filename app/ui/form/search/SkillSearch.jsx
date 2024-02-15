@@ -94,8 +94,8 @@ export const SkillItem = ({skill}) => {
         <div className="skill-list-item">
             <img 
                 className="skill-list-item-img"
-                width="35px"
-                height="35px" 
+                width="25px"
+                height="25px" 
                 src={skill.logoPath} 
                 alt={'Logo de ' + skill.name}
             />

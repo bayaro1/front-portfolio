@@ -298,7 +298,9 @@ input {
     align-items: center;
     margin: 10px 0;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
+    font-size: .9em;
+    row-gap: 0;
 }
 .breadcrumb-link {
     font-weight: 600;
