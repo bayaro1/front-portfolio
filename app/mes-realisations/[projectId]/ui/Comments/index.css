@@ -44,7 +44,7 @@
 .comment-item-header {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 5px;
     row-gap: 0;
     flex-wrap: wrap;
     padding-right: 100px;
@@ -64,7 +64,9 @@
 .comment-item-body {
     margin-top: 0;
 }
-
+.comment-item.by-admin .comment-item-body {
+    margin-top: 5px;
+}
 
 @media only screen and (min-width: 600px) {
     .comment-form {
