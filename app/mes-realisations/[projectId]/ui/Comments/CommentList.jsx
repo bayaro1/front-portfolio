@@ -59,7 +59,7 @@ const CommentItem = ({comment}) => {
 
 const AnswerItem = ({answer}) => {
     return (
-        <div className="answer-item comment-item">
+        <div className={'answer-item comment-item' (answer.byAdmin ? ' by-admin': '')}>
             <div className="comment-item-header">
                 {
                     answer.byAdmin ? (
