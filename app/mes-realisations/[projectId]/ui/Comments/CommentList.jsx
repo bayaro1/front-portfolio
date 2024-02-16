@@ -62,7 +62,7 @@ const AnswerItem = ({answer}) => {
         <div className="answer-item comment-item">
             <div className="comment-item-header">
                 {
-                    answer.isAdmin ? (
+                    answer.byAdmin ? (
                         <>
                             <Image
                                 className="profile-img"
